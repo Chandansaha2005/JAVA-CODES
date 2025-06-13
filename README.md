@@ -1,4 +1,4 @@
-# JAVA-CODES 🚀
+# JAVA-CODES 🚀<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="100" />
 
 Welcome to my Java learning repository!
 
