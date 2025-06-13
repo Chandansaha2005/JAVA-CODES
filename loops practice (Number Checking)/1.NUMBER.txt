@@ -1,4 +1,5 @@
-Number checking
+All Number Definations :--
+
 1. Abundant Number
 Definition: A number whose sum of proper divisors is more than the number itself.
 Example: 12 → Divisors: 1, 2, 3, 4, 6 → Sum = 16 > 12 → Abundant
