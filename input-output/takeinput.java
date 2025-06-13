@@ -11,5 +11,6 @@ public class takeinput {
         System.out.print("Enter your city:- ");
         String city=sc.next();                      // To take a word/string as input 
         System.out.println("Your name is "+ name+"\nYour city is "+city+"\nYour lucky number is "+num );
+        sc.close();
     }
 }
