@@ -1,4 +1,4 @@
-# JAVA-CODES 🚀
+# JAVA-CODES <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="60" />
 
 Welcome to my Java learning repository!
 
@@ -14,6 +14,8 @@ Right now, I’ve completed topics up to:
 - 🧮 Operators & Expressions
 - ⚖️ Conditionals ( if, else, switch-case)
 - 🔄 Loops (for, while, do-while)
+
+🔗[CLICK HERE TO ACCESS ALL CODES](https://github.com/Chandansaha2005/JAVA-CODES/tree/main)
 
 > 📌 For each topic, I’m adding **multiple practice codes** so that others can understand better and practice too.  
 > More topics like arrays, functions, and OOP will be added as I learn them.
