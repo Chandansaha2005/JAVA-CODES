@@ -14,7 +14,7 @@ public class Duck_Number {
         if (num.charAt(0) == '0') {
             flag = false;
         } else {
-            for (int i =1; i < num.length(); i++) {
+            for (int i = 1; i < num.length(); i++) {
                 if (num.charAt(i) == '0') {
                     flag = true;
                     break;
