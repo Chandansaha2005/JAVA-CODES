@@ -15,6 +15,8 @@ Right now, I’ve completed topics up to:
 - ⚖️ Conditionals ( if, else, switch-case)
 - 🔄 Loops (for, while, do-while)
 
+🔗[CLICK HERE TO ACCESS ALL CODES](https://github.com/Chandansaha2005/JAVA-CODES/tree/main)
+
 > 📌 For each topic, I’m adding **multiple practice codes** so that others can understand better and practice too.  
 > More topics like arrays, functions, and OOP will be added as I learn them.
 > 
