@@ -14,7 +14,7 @@ public class Smith_Number {
             sum += i % 10;
             System.out.print(" + " + (i % 10));
         }
-        System.out.println(" = " + sum);
+        System.out.println("\nSum Of Digits = " + sum);
 
         // Prime factor
         for (int j = 2, n = num; j <= n; j++) {
@@ -26,14 +26,20 @@ public class Smith_Number {
             if (count > 0) {
                 System.out.println(j + "^" + count);
                 if (j < 10) {
-                    psum += j;
+                    psum += j * count;
                 } else {
                     for (int i = j; i > 0; i /= 10) {
                         psum += i % 10;
-                        System.out.print(" + " + (i % 10));
                     }
+                    System.out.println("Sum Of Prime Factor's Digits = " + psum);
                 }
-            }System.out.println(psum);
+            }
         }
+        if (sum == psum) {
+            System.out.println("It's a Smith Number");
+        } else {
+            System.out.println("It's Not a Smith Number");
+        }
+        sc.close();
     }
 }
