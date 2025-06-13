@@ -23,5 +23,6 @@ public class Unique_Number {
         } else {
             System.out.print("It's Not a Unique Number ");
         }
+        sc.close();
     }
 }
