@@ -1,3 +1,7 @@
+
+// Prime-Palindrome Number
+// Definition: A number which is both prime and palindrome.
+// Example: 131 → Prime & Palindrome → Prime-Palindrome
 import java.util.Scanner;
 
 public class Prime_Palindrome_Number {
