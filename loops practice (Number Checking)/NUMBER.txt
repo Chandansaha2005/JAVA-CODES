@@ -1,0 +1,114 @@
+Number checking
+1. Abundant Number
+Definition: A number whose sum of proper divisors is more than the number itself.
+Example: 12 → Divisors: 1, 2, 3, 4, 6 → Sum = 16 > 12 → Abundant
+---
+2. Armstrong Number
+Definition: Sum of digits raised to the power of number of digits = number.
+Example: 153 → 1³ + 5³ + 3³ = 153 → Armstrong
+---
+3. Circular Prime Number
+Definition: All rotations of the digits are prime.
+Example: 197 → 197, 971, 719 → All prime → Circular Prime
+---
+4. Co-Prime Numbers
+Definition: Two numbers with GCD = 1.
+Example: (8, 15) → GCD = 1 → Co-Prime
+---
+5. Disarium Number
+Definition: Sum of digits powered with their positions = number.
+Example: 135 → 1¹ + 3² + 5³ = 135 → Disarium
+---
+6. Duck Number
+Definition: A number that contains zero, but not at the beginning.
+Example: 102 → contains 0 → Duck Number
+(010 is not duck, starts with 0)
+---
+7. Dudeney Number
+Definition: A number whose cube root equals the sum of its digits.
+Example: 512 → Digits: 5+1+2 = 8, and 8³ = 512 → Dudeney
+---
+8. Evil Number
+Definition: Number with even number of 1s in binary form.
+Example: 9 → Binary: 1001 → 2 ones → Evil
+---
+9. Happy Number
+Definition: Repeated sum of square of digits eventually becomes 1.
+Example: 19 → 1²+9² = 82 → 8²+2² = 68 → ... → 1 → Happy
+---
+10. Harshad Number
+Definition: Number divisible by the sum of its digits.
+Example: 18 → 1+8 = 9 → 18 is divisible by 9 → Harshad
+---
+11. Hardy-Ramanujan Number
+Definition: Can be expressed as sum of cubes of two numbers in two different ways.
+Example: 1729 → 1³ + 12³ = 9³ + 10³ → Hardy-Ramanujan
+---
+12. Kaprekar Number
+Definition: Square of number can be split and summed to get the number.
+Example: 45 → 45² = 2025 → 20 + 25 = 45 → Kaprekar
+---
+13. Krishnamurthy Number
+Definition: Sum of factorial of digits = number.
+Example: 145 → 1! + 4! + 5! = 145 → Krishnamurthy
+---
+14. Magic Number
+Definition: Recursive sum of digits equals 1.
+Example: 1729 → 1+7+2+9 = 19 → 1+9 = 10 → 1+0 = 1 → Magic
+---
+15. Neon Number
+Definition: Square of number, sum of digits = number.
+Example: 9 → 9² = 81 → 8+1 = 9 → Neon
+---
+16. Palindrome Number
+Definition: Same forwards and backwards.
+Example: 121 → Same → Palindrome
+---
+17. Perfect Number
+Definition: Sum of proper divisors = number.
+Example: 28 → 1+2+4+7+14 = 28 → Perfect
+---
+18. Prime Number
+Definition: Only divisible by 1 and itself.
+Example: 7 → Prime
+---
+19. Prime-Palindrome Number
+Definition: A number which is both prime and palindrome.
+Example: 131 → Prime & Palindrome → Prime-Palindrome
+---
+20. Pronic Number
+Definition: Product of two consecutive numbers.
+Example: 6 = 2×3 → Pronic
+---
+21. Ramanujan Number
+Same as Hardy-Ramanujan → 1729
+---
+22. Smith Number
+Definition: Composite number where sum of digits = sum of digits of its prime factors.
+Example: 666 → 6+6+6 = 18
+Prime factors: 2×3×3×37 → 2+3+3+3+7 = 18 → Smith
+---
+23. Spy Number
+Definition: Sum of digits = product of digits.
+Example: 1124 → 1+1+2+4 = 8, 1×1×2×4 = 8 → Spy
+---
+24. Tech Number
+Definition: Even number of digits, square of the number formed by splitting in half = original.
+Example: 2025 → Split: 20 & 25 → (20+25)² = 45² = 2025 → Tech
+---
+25. Twisted Prime Number
+Definition: A prime whose reverse is also prime.
+Example: 13 → reverse = 31 → both prime → Twisted Prime
+---
+26. Twin Prime Number
+Definition: Prime numbers differing by 2.
+Example: (11,13), (17,19) → Twin Primes
+---
+27. Ugly Number
+Definition: A number whose prime factors are only 2, 3, or 5.
+Example: 30 → 2×3×5 → Ugly
+---
+28. Unique Number
+Definition: No digit repeats.
+Example: 1234 → All digits different → Unique
+---
