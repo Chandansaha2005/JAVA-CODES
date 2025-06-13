@@ -17,5 +17,6 @@ public class count {
             n /= 10;
         }
         System.out.println("Total digit = " + c);
+        sc.close();
     }
 }

@@ -13,5 +13,6 @@ public class AtoThePowerb {
             num *= num;
         }
         System.out.println(n + " to the power " + p + " = " + num);
+        sc.close();
     }
 }

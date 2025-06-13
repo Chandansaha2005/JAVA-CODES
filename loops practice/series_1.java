@@ -16,5 +16,6 @@ public class series_1 {
             }
         }
         System.out.print(" = " + s);
+        sc.close();
     }
 }

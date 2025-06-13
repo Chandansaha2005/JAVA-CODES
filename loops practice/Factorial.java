@@ -10,5 +10,6 @@ public class Factorial {
             f *= num;
         }
         System.out.print("Factorial of = " + f);
+        sc.close();
     }
 }
