@@ -13,7 +13,7 @@ Right now, I’ve completed topics up to:
 - ✅ Basic Java Syntax
 - 🧮 Operators & Expressions
 - ⚖️ Conditionals ( if, else, switch-case)
-- 🔄 Loops (for, while, do-while)
+- 🔄 Loops & Nested Loops (for, while, do-while)
 
 🔗[CLICK HERE TO ACCESS ALL CODES](https://github.com/Chandansaha2005/JAVA-CODES/tree/main)
 
