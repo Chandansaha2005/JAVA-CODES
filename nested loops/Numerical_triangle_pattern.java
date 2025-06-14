@@ -18,5 +18,6 @@ public class Numerical_triangle_pattern {
             }
             System.out.println();
         }
+        sc.close();
     }
 }
