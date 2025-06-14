@@ -1,4 +1,4 @@
-# JAVA-CODES <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="60" />
+# <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="60" /> JAVA-CODES OF CKS
 
 Welcome to my Java learning repository!
 
