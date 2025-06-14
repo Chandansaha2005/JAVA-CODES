@@ -1,3 +1,10 @@
+
+/*
+121212
+121212
+121212
+121212 
+*/
 import java.util.Scanner;
 
 public class Numerical_rectangle_pattern_3 {
