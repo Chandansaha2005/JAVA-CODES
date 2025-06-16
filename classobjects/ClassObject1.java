@@ -2,7 +2,6 @@ class NewClass {
     int attribute1 = 10;
     int attribute2 = 20;
 }
-
 public class ClassObject1 {
     public static void main(String[] args) {
         NewClass object = new NewClass();
