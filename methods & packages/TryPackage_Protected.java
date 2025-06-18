@@ -17,20 +17,20 @@ public class TryPackage_Protected {
         // Calling the public method from ProtectedAccessModifiers class
         ob.printFromClass();
 
-        // Creating an object of the child class Outsider2OfPublicAccessModifier to call its method
-        Outsider2OfPublicAccessModifier ob2 = new Outsider2OfPublicAccessModifier();
+        // Creating an object of the child class Outsider2OfProtectedAccessModifier to call its method
+        Outsider2OfProtectedAccessModifier ob2 = new Outsider2OfProtectedAccessModifier();
         ob2.printFromChildClass();
     }
 }
 
-// Defining a child class 'Outsider2OfPublicAccessModifier' that extends (inherits) from ProtectedAccessModifiers
-class Outsider2OfPublicAccessModifier extends ProtectedAccessModifiers {
+// Defining a child class 'Outsider2OfProtectedAccessModifier' that extends (inherits) from ProtectedAccessModifiers
+class Outsider2OfProtectedAccessModifier extends ProtectedAccessModifiers {
 
     // This method demonstrates that the child class can access the parent's protected members
     void printFromChildClass() {
         // Directly accessing the inherited protected variable
         System.out.println(
-                "This is from Outsider2OfPublicAccessModifier (child class of ProtectedAccessModifiers parent class): " 
+                "This is from Outsider2OfProtectedAccessModifier (child class of ProtectedAccessModifiers parent class): " 
                         + str);
     }
 }
