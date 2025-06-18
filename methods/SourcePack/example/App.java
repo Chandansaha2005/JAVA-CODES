@@ -1,4 +1,3 @@
-package SourcePack.example;
 
 public class App {
     public String str = "This is the public string";
