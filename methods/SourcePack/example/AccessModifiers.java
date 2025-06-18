@@ -1,34 +1,35 @@
 // Defining a package named SourcePack.example
 package SourcePack.example;  
 
-
 // A public class named AccessModifiers with the main method
 public class AccessModifiers {  
+    // Public string variable, accessible from any class
     public String str = "This is the public string";  
 
     // Public method, accessible from anywhere within the package and outside
-    public void PrintFromClass() {  
+    public void printFromClass() {  
         System.out.println("Within the Class in Public Access");  
-    } 
+    }  
+
     public static void main(String[] args) {  
         // Creating an object of AccessModifiers class and accessing its members
         AccessModifiers ob = new AccessModifiers();  
-        ob.PrintFromClass();  // Calling the public method  
+        ob.printFromClass();  // Calling the public method  
         System.out.println(ob.str);  // Accessing the public variable  
 
-        // Creating an object of outsider class and calling its method
-        outsider ob1 = new outsider();  
-        ob1.PrintFromOutsideClass();  
+        // Creating an object of Outsider class and calling its method
+        Outsider ob1 = new Outsider();  
+        ob1.printFromOutsideClass();  
     }  
 }  
 
-// A class named outsider (note: lowercase class name is unconventional, usually class names start with uppercase)
-class outsider {  
+// A class named Outsider (proper capitalization according to Java conventions)
+class Outsider {  
     // Default (package-private) access method
-    void PrintFromOutsideClass() {  
-        // Creating an object of Modifiers class
+    void printFromOutsideClass() {  
+        // Creating an object of AccessModifiers class
         AccessModifiers ob = new AccessModifiers();  
         // Accessing the public variable from another class in the same package
-        System.out.println("Within Same code but from an outside class " + ob.str);  
+        System.out.println("Within the same code but from an outside class: " + ob.str);  
     }  
 }
