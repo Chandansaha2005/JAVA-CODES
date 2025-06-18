@@ -1,6 +1,3 @@
-// Defining a package named SourcePack.example
-package SourcePack.example;  
-
 // A public class named AccessModifiers with the main method
 public class AccessModifiers {  
     // Public string variable, accessible from any class
