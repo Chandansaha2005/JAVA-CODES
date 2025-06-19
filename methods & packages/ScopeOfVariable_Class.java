@@ -1,7 +1,8 @@
 public class ScopeOfVariable_Class {
     // Class-level variables (instance variables) accessible throughout the class
     int a = 10;
-    // int a==11; // Invalid: Cannot declare another variable with the same name 'a' in the same scope
+    // int a==11; // Invalid: Cannot declare another variable with the same name 'a'
+    // in the same scope
     int b = 5;
 
     // Method to perform addition using class-level variables
@@ -18,7 +19,7 @@ public class ScopeOfVariable_Class {
     public static void main(String[] args) {
         // Creating an object to access non-static methods
         ScopeOfVariable_Class obj = new ScopeOfVariable_Class();
-        
+
         // Calling methods and printing results
         System.out.println("Addition: " + obj.add());
         System.out.println("Subtraction: " + obj.sub());
