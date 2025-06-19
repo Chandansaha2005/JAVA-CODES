@@ -16,10 +16,11 @@ public class ScopeOfVariable_Block {
             System.out.println(b); // Can access this 'b' here
         }
 
-        for (int i = 0; i < 10; i++) { // Loop block
+        for (int i = 0; i < 10; i++) { // Loop block // here the "i" is also a block level scope
             int b = 10; // Block-level variable 'b' within the for-loop block
             System.out.println(b); // Can access 'b' here during each iteration
         }
+        // System.out.println(i);// Error: we can't access the i here
 
         if (true) { // If-block
             int b = 45; // Block-level variable 'b' specific to this conditional block
