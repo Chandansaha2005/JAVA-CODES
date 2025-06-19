@@ -25,7 +25,7 @@ class A {
 }
 
 // Child class that inherits from class A
-class SingleLevel_Inheritence extends A {
+class SingleLevel_Inheritance extends A {
     int s = 0, p = 1; // s: sum of digits, p: product of digits
 
     // Method to check if the number is a palindrome
@@ -51,7 +51,7 @@ class SingleLevel_Inheritence extends A {
 
     // Main method to execute the logic
     public static void main(String[] args) {
-        SingleLevel_Inheritence ob = new SingleLevel_Inheritence();
+        SingleLevel_Inheritance ob = new SingleLevel_Inheritance();
         ob.input(); // Get user input
         ob.reverse(); // Reverse the number
         ob.check(); // Check if it's a palindrome
