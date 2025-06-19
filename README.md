@@ -14,8 +14,8 @@ Right now, I’ve completed topics up to:
 - 🧮 Operators & Expressions
 - ⚖️ Conditionals ( if, else, switch-case)
 - 🔄 Loops & Nested Loops (for, while, do-while)
-- 📦 Packages & Import Statements
-- 🧩 Methods (Definition, Calling, Parameters, Return Types)
+- 📦 Packages(Import Statements, Access Modifiers)
+- 🧩 Methods (Definition, Calling, Parameters, Return Types, Scope of Variables)
 
 🔗[CLICK HERE TO ACCESS ALL CODES](https://github.com/Chandansaha2005/JAVA-CODES/tree/main)
 
