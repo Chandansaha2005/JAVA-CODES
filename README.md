@@ -10,13 +10,52 @@ This repo is a collection of Java programs that I’m writing as part of my dail
 
 Right now, I’ve completed topics up to:
 
-- ✅ Basic Java Syntax
-- 🧮 Operators & Expressions
-- ⚖️ Conditionals ( if, else, switch-case)
-- 🔄 Loops & Nested Loops (for, while, do-while)
-- 📦 Packages(Import Statements, Access Modifiers)
-- 🧩 Methods (Definition, Calling, Parameters, Return Types, Scope of Variables)
+- ✅ *Basic Java Syntax*
+  - Structure of a Java program  
+  - main method  
+  - Comments, indentation  
+  - Printing with System.out.println()  
+  - Data types and variables  
 
+- 🧮 *Operators & Expressions*
+  - Arithmetic operators (+, -, *, /, %)  
+  - Relational operators (==, !=, >, <, etc.)  
+  - Logical operators (&&, ||, !)  
+  - Assignment operators (=, +=, etc.)  
+  - Unary operators (+, -, !)  
+  - Bitwise operators (&, |, ^, ~, <<, >>)  
+
+- ⚖ *Conditionals*
+  - if statement  
+  - if-else  
+  - else-if ladder  
+  - switch-case  
+
+- 🔄 *Loops & Nested Loops*
+  - for loop  
+  - while loop  
+  - do-while loop  
+  - Loop control: break, continue  
+  - Nested loops  
+
+- 📦 *Packages*
+  - Creating packages  
+  - import statements  
+  - Access modifiers (public, private, protected, default)  
+
+- 🧩 *Methods*
+  - Method definition and calling  
+  - Parameters and arguments  
+  - Return types  
+  - Method overloading  
+  - Scope of variables (local, global, static)  
+
+- 🧱 *Class & Object*
+  - Creating classes and objects  
+  - Constructor basics  
+  - Parent-child class (Inheritance)  
+
+*To Be Continued....*
 🔗[CLICK HERE TO ACCESS ALL CODES](https://github.com/Chandansaha2005/JAVA-CODES/tree/main)
 
 > 📌 For each topic, I’m adding **multiple practice codes** so that others can understand better and practice too.  
