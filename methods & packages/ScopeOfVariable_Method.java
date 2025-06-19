@@ -1,29 +1,31 @@
 public class ScopeOfVariable_Method {
-    // Class-level (instance) variables accessible to all methods in the class
+    // Class-level (instance) variables accessible throughout all non-static methods
     int a = 10;
-    // int a==11; // Invalid: can't declare another variable with the same name 'a'
+    // int a==11; // Invalid: Cannot declare another variable with the same name 'a'
     // in the same scope
     int b = 5;
 
     // Method demonstrating method-level (local) variables
     int add() {
-        int p = 5; // p and q are local to this method only
+        int p = 5; // p and q are local to this method
         int q = 4;
-        return p + q; // Local variables are accessible within the method
+        return p + q; // These variables can't be used outside this method
     }
 
-    // This method tries to use p and q, but they'll be out of scope here
+    // Another method with its own local variables named p and q
     int sub() {
-        // int result = p - q; // ❌ Error: p and q are not defined in this method
-        return a - b; // ✅ Instead, use class-level variables if needed
+        int p = 5;
+        int q = 10; // Same variable names allowed in a different method
+        int result = p - q;
+        return result;
     }
 
     public static void main(String[] args) {
-        // Creating an object to call instance methods
+        // Create an object to call instance methods
         ScopeOfVariable_Method obj = new ScopeOfVariable_Method();
 
-        // Calling add() and sub(), and printing the results
-        System.out.println("Addition (using local variables): " + obj.add());
-        System.out.println("Subtraction (using class-level variables): " + obj.sub());
+        // Call the methods and print their results
+        System.out.println("Addition (using method-level variables): " + obj.add());
+        System.out.println("Subtraction (also using method-level variables): " + obj.sub());
     }
 }
