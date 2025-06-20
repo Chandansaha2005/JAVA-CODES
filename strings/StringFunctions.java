@@ -42,5 +42,8 @@ public class StringFunctions {
 
         // Checks if "india" ends with the substring "ia"
         System.out.println(str.endsWith("ia")); // true
+        str1 = "ABC";
+        System.out.println(str.toUpperCase());// INDIA
+        System.out.println(str1.toLowerCase());// abc
     }
 }
