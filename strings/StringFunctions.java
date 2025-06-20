@@ -16,5 +16,6 @@ public class StringFunctions {
         System.out.println(str.contains("in"));// true
         System.out.println(str.contains("an"));// false
         System.out.println(str.startsWith("in"));// true
+        System.out.println(str.endsWith("ia"));// true
     }
 }
