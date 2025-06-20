@@ -1,7 +1,7 @@
 public class StringFunctions {
     public static void main(String[] args) {
         String str = "india";
-        
+
         // Prints the length of the string "india", which is 5
         System.out.println(str.length()); // 5
 
@@ -20,13 +20,15 @@ public class StringFunctions {
         str1 = "cbc";
         str2 = "abc";
 
-        // Returns a positive value (1) because 'c' > 'a' in the first differing character
+        // Returns a positive value (1) because 'c' > 'a' in the first differing
+        // character
         System.out.println(str1.compareTo(str2)); // 1
 
         str1 = "abc";
         str2 = "abz";
 
-        // Returns a negative value (-23) because 'c' < 'z' in the first differing character
+        // Returns a negative value (-23) because 'c' < 'z' in the first differing
+        // character
         System.out.println(str1.compareTo(str2)); // -23
 
         // Checks if "india" contains the substring "in"
