@@ -45,5 +45,7 @@ public class StringFunctions {
         str1 = "ABC";
         System.out.println(str.toUpperCase());// INDIA
         System.out.println(str1.toLowerCase());// abc
+        str2 = "DEF";
+        System.out.println(str1.concat(str2));
     }
 }
