@@ -13,5 +13,7 @@ public class StringFunctions {
         str1 = "abc";
         str2 = "abz";
         System.out.println(str1.compareTo(str2)); // -23
+        System.out.println(str.contains("in"));// true
+        System.out.println(str.contains("an"));// false
     }
 }
