@@ -42,12 +42,24 @@ public class StringFunctions {
 
         // Checks if "india" ends with the substring "ia"
         System.out.println(str.endsWith("ia")); // true
+
         str1 = "ABC";
-        System.out.println(str.toUpperCase());// INDIA
-        System.out.println(str1.toLowerCase());// abc
+
+        // Converts "india" to uppercase and prints it
+        System.out.println(str.toUpperCase()); // INDIA
+
+        // Converts "ABC" to lowercase and prints it
+        System.out.println(str1.toLowerCase()); // abc
+
         str2 = "DEF";
-        System.out.println(str1.concat(str2));
-        System.out.println(str.substring(0, 4));// indi
-        System.out.println(str.substring(2));// dia
+
+        // Concatenates "ABC" and "DEF" and prints "ABCDEF"
+        System.out.println(str1.concat(str2)); // ABCDEF
+
+        // Prints the substring from index 0 to 4 (excluding index 4) => "indi"
+        System.out.println(str.substring(0, 4)); // indi
+
+        // Prints the substring from index 2 to the end => "dia"
+        System.out.println(str.substring(2)); // dia
     }
 }
