@@ -48,5 +48,6 @@ public class StringFunctions {
         str2 = "DEF";
         System.out.println(str1.concat(str2));
         System.out.println(str.substring(0, 4));// indi
+        System.out.println(str.substring(2));// dia
     }
 }
