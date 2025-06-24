@@ -15,13 +15,13 @@ public class StringPractice2 {
         String str = "abc";
         int c = 0;
         for (int i = 0; i < str.length(); i++) {
-            for (int j = i; j < str.length() + 1; j++) {
-                if (IsPalindrome(str.substring(i, j))==true) {
+            for (int j = i + 1; j <= str.length(); j++) {
+                if (IsPalindrome(str.substring(i, j))) {
                     System.out.print(str.substring(i, j) + " ");
                     c++;
                 }
             }
         }
-        System.out.println(c);
+        System.out.println("\nTotal palindromic substrings: " + c);
     }
 }
