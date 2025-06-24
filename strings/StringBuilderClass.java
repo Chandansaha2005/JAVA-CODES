@@ -6,6 +6,7 @@ public class StringBuilderClass {
         // str.charAt(0)='M';// this didn't work in string
         str.setCharAt(0, 'M');
         str.insert(4, 'o');
+        str.deleteCharAt(0);
         System.out.println(str);
 
     }
