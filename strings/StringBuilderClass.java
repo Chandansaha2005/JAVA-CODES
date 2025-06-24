@@ -5,6 +5,8 @@ public class StringBuilderClass {
         str.append(" World");
         // str.charAt(0)='M';// this didn't work in string
         str.setCharAt(0, 'M');
+        str.insert(4, 'o');
         System.out.println(str);
+
     }
 }
