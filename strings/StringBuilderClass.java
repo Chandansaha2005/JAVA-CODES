@@ -7,6 +7,7 @@ public class StringBuilderClass {
         str.setCharAt(0, 'M');
         str.insert(4, 'o');
         str.deleteCharAt(0);
+        str.delete(0, 2);
         System.out.println(str);
 
     }
