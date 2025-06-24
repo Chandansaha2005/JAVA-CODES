@@ -8,6 +8,7 @@ public class StringBuilderClass {
         str.insert(4, 'o');
         str.deleteCharAt(0);
         str.delete(0, 2);
+        str.reverse();
         System.out.println(str);
 
     }
