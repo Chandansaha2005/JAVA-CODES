@@ -9,12 +9,16 @@ public class StringBuilderPractice4 {
             if (temp == ptemp) {
                 c++;
             } else {
-                ans += c;
+                if (c > 1) {
+                    ans += c;
+                }
                 c = 1;
                 ans += temp;
             }
         }
-        ans += c;
+        if (c > 1) {
+            ans += c;
+        }
         System.out.println(ans);
     }
 }
