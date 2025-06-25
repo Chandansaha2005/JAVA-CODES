@@ -1,3 +1,4 @@
+//compression of a string 
 public class StringBuilderPractice4 {
     public static void main(String[] args) {
         StringBuilder str = new StringBuilder("aaabbbbcccccddddddddeef");
