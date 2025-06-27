@@ -3,13 +3,11 @@ import java.util.Scanner;
 class MIT_Parent {
     int len, br, ar, pr;
 
-    public void input() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Lenght of the Rectangle  = ");
+    public void input(Scanner sc) {
+        System.out.println("Enter the Length of the Rectangle = ");
         len = sc.nextInt();
-        System.out.println("Enter the Breadth of the Rectangle  = ");
+        System.out.println("Enter the Breadth of the Rectangle = ");
         br = sc.nextInt();
-        sc.close();
     }
 
     public void rectangle_area_perimeter() {
@@ -19,13 +17,13 @@ class MIT_Parent {
 }
 
 interface Circle {
-    public final double pi = 3.14;
+    double pi = 3.14;
 
-    public void circle_cal(double r);
+    void circle_cal(double r);
 }
 
 interface Str_concat {
-    public void concat();
+    void concat(Scanner sc);
 }
 
 public class MultipleLevel_Inheritance_TwoInterface extends MIT_Parent implements Circle, Str_concat {
@@ -37,24 +35,35 @@ public class MultipleLevel_Inheritance_TwoInterface extends MIT_Parent implement
         c_pr = 2 * pi * r;
     }
 
-    public void Str_concat() {
-        Scanner sc = new Scanner(System.in);
+    public void concat(Scanner sc) {
+        sc.nextLine(); // Clear newline from previous input
         System.out.println("Enter the first string = ");
         x = sc.nextLine();
         System.out.println("Enter the second string = ");
         y = sc.nextLine();
         z = x + " " + y;
-        sc.close();
     }
 
     public void show() {
-        System.out.println("Rectangle Area = " + ar + "\nRectangle Perimeter = " + pr);
-        System.out.println("Circle Area = " + c_ar + "\nCircle Perimeter = " + c_pr);
-        System.out.println("Concat String = " + z);
+        System.out.println("Rectangle Area = " + ar);
+        System.out.println("Rectangle Perimeter = " + pr);
+        System.out.println("Circle Area = " + c_ar);
+        System.out.println("Circle Perimeter = " + c_pr);
+        System.out.println("Concatenated String = " + z);
     }
 
     public static void main(String[] args) {
-        MultipleLevel_Inheritance_TwoInterface ob  = new MultipleLevel_Inheritance_TwoInterface();
-        
+        Scanner sc = new Scanner(System.in);
+        MultipleLevel_Inheritance_TwoInterface ob = new MultipleLevel_Inheritance_TwoInterface();
+
+        ob.input(sc);
+        ob.rectangle_area_perimeter();
+        System.out.println("Enter the radius of the circle = ");
+        double r = sc.nextDouble();
+        ob.circle_cal(r);
+        ob.concat(sc);
+        ob.show();
+
+        sc.close();
     }
 }
