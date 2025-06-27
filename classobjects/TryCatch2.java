@@ -11,6 +11,7 @@ public class TryCatch2 {
             b = ob.nextInt();
             c = a / b;
             System.out.print("Division = " + c);
+            ob.close();
         } catch (ArithmeticException e) {
             System.out.print("Arithmetic division problem / by 0 can't be possible \n" + e);
         } catch (Exception e) {
