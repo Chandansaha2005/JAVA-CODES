@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MultiLevel_Inheritance {
+class MultiLevel_Inheritance_Parent {
     int a, b, sum;
 
     public void input() {
@@ -17,7 +17,7 @@ public class MultiLevel_Inheritance {
     }
 }
 
-class Child1 extends MultiLevel_Inheritance {
+class Child1 extends MultiLevel_Inheritance_Parent {
     int sub;
 
     public void subtract() {
@@ -48,9 +48,9 @@ class Child3 extends Child2 {
     }
 }
 
-class Child4 extends Child3 {
+public class MultiLevel_Inheritance extends Child3 {
     public static void main(String[] args) {
-        Child4 ob = new Child4();
+        MultiLevel_Inheritance ob = new MultiLevel_Inheritance();
         ob.input();
         ob.add();
         ob.subtract();
