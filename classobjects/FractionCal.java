@@ -49,15 +49,32 @@ public class FractionCal {
     static void Fraction_mul(int a1, int b1, int a2, int b2) {
         ans_d = b1 * b2;
         ans_n = a1 * a2;
-        double ans = (double) (ans_n * ans_d);
-        System.out.println("Multiplecation = " + ans_n + "/" + ans_d + " = " + ans);
+        System.out.print("Multiplecation = " + ans_n + "/" + ans_d + " = ");
+        Fractions_simplify(ans_n, ans_d);
     }
 
     static void Fraction_div(int a1, int b1, int a2, int b2) {
         ans_d = b1 * a2;
         ans_n = a1 * b2;
-        double ans = (double) ans_n / (double) ans_d;
-        System.out.println("Multiplecation = " + ans_n + "/" + ans_d + " = " + ans);
+        System.out.print("\nDivision = " + ans_n + "/" + ans_d + " = ");
+        Fractions_simplify(ans_n, ans_d);
+    }
+
+    static void Fractions_simplify(int a, int b) {
+        int cf = HCF(a, b);
+        a /= cf;
+        b /= cf;
+        System.out.print(a + "/" + b);
+    }
+
+    static int HCF(int a, int b) {
+        int min = Math.min(a, b);
+        for (int i = min; i > 0; i--) {
+            if (a % i == 0 && b % i == 0) {
+                return i;
+            }
+        }
+        return min;
     }
 
     public static void main(String[] args) {
