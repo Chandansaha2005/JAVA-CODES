@@ -14,7 +14,7 @@ public class FractionCal {
         System.out.print("Denominator = ");
         b2 = sc.nextInt();
         sc.close();
-        System.out.println("\nFractions: - \n" + a1 + "/" + b1 + " , " + a2 + "/" + b2);
+        System.out.println("\nFractions: - " + a1 + "/" + b1 + " , " + a2 + "/" + b2 + "\n");
     }
 
     static int LCM(int a, int b) {
@@ -49,14 +49,14 @@ public class FractionCal {
     static void Fraction_mul(int a1, int b1, int a2, int b2) {
         ans_d = b1 * b2;
         ans_n = a1 * a2;
-        double ans = (double) (ans_n / ans_d);
+        double ans = (double) (ans_n * ans_d);
         System.out.println("Multiplecation = " + ans_n + "/" + ans_d + " = " + ans);
     }
 
     static void Fraction_div(int a1, int b1, int a2, int b2) {
         ans_d = b1 * a2;
         ans_n = a1 * b2;
-        double ans = (double) (ans_n / ans_d);
+        double ans = (double) ans_n / (double) ans_d;
         System.out.println("Multiplecation = " + ans_n + "/" + ans_d + " = " + ans);
     }
 
@@ -64,7 +64,7 @@ public class FractionCal {
         input();
         Fraction_add(a1, b1, a2, b2);
         Fraction_sub(a1, b1, a2, b2);
-        // Fraction_mul(a1, b1, a2, b2);
-        // Fraction_div(a1, b1, a2, b2);
+        Fraction_mul(a1, b1, a2, b2);
+        Fraction_div(a1, b1, a2, b2);
     }
 }
