@@ -16,6 +16,7 @@ public class FractionCal {
         sc.close();
         System.out.println("\nFractions: - " + a1 + "/" + b1 + " , " + a2 + "/" + b2 + "\n");
     }
+    
 
     static int LCM(int a, int b) {
         int res = 1, greater;
@@ -37,19 +38,21 @@ public class FractionCal {
     static void Fraction_add(int a1, int b1, int a2, int b2) {
         ans_d = LCM(b1, b2);
         ans_n = (a1 * (ans_d / b1)) + (a2 * (ans_d / b2));
-        System.out.println("Addition = " + ans_n + "/" + ans_d);
+        System.out.print("Addition = " + ans_n + "/" + ans_d + " = ");
+        Fractions_simplify(ans_n, ans_d);
     }
 
     static void Fraction_sub(int a1, int b1, int a2, int b2) {
         ans_d = LCM(b1, b2);
         ans_n = (a1 * (ans_d / b1)) - (a2 * (ans_d / b2));
-        System.out.println("Subtraction = " + ans_n + "/" + ans_d);
+        System.out.print("\nSubtraction = " + ans_n + "/" + ans_d + " = ");
+        Fractions_simplify(ans_n, ans_d);
     }
 
     static void Fraction_mul(int a1, int b1, int a2, int b2) {
         ans_d = b1 * b2;
         ans_n = a1 * a2;
-        System.out.print("Multiplecation = " + ans_n + "/" + ans_d + " = ");
+        System.out.print("\nMultiplecation = " + ans_n + "/" + ans_d + " = ");
         Fractions_simplify(ans_n, ans_d);
     }
 
