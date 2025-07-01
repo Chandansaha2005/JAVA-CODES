@@ -98,6 +98,14 @@ If you want to follow along or learn with me, feel free to fork, star ⭐ this r
 
 ---
 
+## 🤝 How to Contribute
+
+- 🍴 Fork this repo  
+- 👯 Add your Java programs or improve existing ones  
+- 🔁 Submit a Pull Request
+
+---
+
 ## 📣 Stay Connected
 
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="20" /> [LinkedIn – Chandan Saha](https://www.linkedin.com/in/chandansaha2005/)  
