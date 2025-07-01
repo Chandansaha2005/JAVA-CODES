@@ -9,10 +9,10 @@ public class Array_FindAnElement {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 1, 5, 3 };
-        int x = 5;
+        int arr[] = { 1, 5, 3, 9, 8, 2 };
+        int x = 9;
         if (Find(arr, x) > -1) {
-            System.out.print(x + " Found At = index " + Find(arr, x));
+            System.out.print(x + " Found At index " + Find(arr, x));
         } else
             System.out.print("Not Found");
     }
