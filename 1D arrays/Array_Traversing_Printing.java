@@ -13,5 +13,11 @@ public class Array_Traversing_Printing {
         for (int a : arr) {// With for each loop
             System.out.print(a + " ");
         }
+        System.out.println();
+        int j = 0;// With while loop
+        while (j < arr.length) {
+            System.out.print(arr[j] + " ");
+            j++;
+        }
     }
 }
