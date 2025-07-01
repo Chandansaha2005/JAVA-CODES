@@ -1,6 +1,12 @@
 import java.util.Scanner;
 
 public class Array_Traversing_Input {
+    static void PrintArray(int a[]) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int arr[] = new int[5];
@@ -10,8 +16,6 @@ public class Array_Traversing_Input {
         }
         sc.close();
         System.out.print("\nArray = ");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
+        PrintArray(arr);
     }
 }
