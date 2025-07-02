@@ -10,12 +10,11 @@ public class Array_Greater_Element {
     }
 
     static void checkDublicate(int a[], int x) {
-        int c = 0, l = 0;
+        int c = 0;
         for (int i = 0; i < a.length; i++) {
             if (a[i] > x) {
                 c++;
                 System.out.println(a[i] + " At Index " + i + " is Greater Than " + x);
-                l = i;
             }
         }
         if (c != 0) {
