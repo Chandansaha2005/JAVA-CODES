@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class Array_Dublicate_Element {
+public class Array_Greater_Element {
+
     static void printArray(int a[]) {
         System.out.print("Array = ");
         for (int i = 0; i < a.length; i++) {
@@ -11,17 +12,16 @@ public class Array_Dublicate_Element {
     static void checkDublicate(int a[], int x) {
         int c = 0, l = 0;
         for (int i = 0; i < a.length; i++) {
-            if (a[i] == x) {
+            if (a[i] > x) {
                 c++;
-                System.out.println(x + " Present At Index " + i);
+                System.out.println(a[i] + " At Index " + i + " is Greater Than " + x);
                 l = i;
             }
         }
         if (c != 0) {
-            System.out.println(x + " Last Occurence found At Index " + l);
-            System.out.print(x + " Present " + c + " Times");
+            System.out.print("Number of Element Greater than " + x + " is " + c);
         } else
-            System.out.print(x + " is Not Present in This Array");
+            System.out.print(x + " is Greater Than All Element of This Array");
     }
 
     public static void main(String[] args) {
