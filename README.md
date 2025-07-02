@@ -55,12 +55,23 @@ Right now, I’ve completed topics up to:
   - Constructor basics  
   - Parent-child class (Inheritance)  
 
-*To Be Continued....*
+- 📚 *Arrays*
+  - Single-Dimensional Arrays  
+  - Multi-Dimensional Arrays (2D Arrays, nested loops for access)  
+
+- 📄 *Strings*
+  - Declaring and initializing strings  
+  - String methods: `length()`, `charAt()`, `substring()`, `toUpperCase()`, `toLowerCase()`  
+  - String comparison: `equals()`, `equalsIgnoreCase()`, `compareTo()`  
+  - String concatenation and immutability  
+  - Using `StringBuilder` and `StringBuffer` for mutable strings  
+
+*To Be Continued....*  
 🔗[CLICK HERE TO ACCESS ALL CODES](https://github.com/Chandansaha2005/JAVA-CODES/tree/main)
 
 > 📌 For each topic, I’m adding **multiple practice codes** so that others can understand better and practice too.  
-> More topics like arrays, functions, and OOP will be added as I learn them.
-> 
+> More topics like functions, file handling, and full OOP will be added as I learn them.
+
 ---
 
 ## 💡 Who is this for?
@@ -87,11 +98,19 @@ If you want to follow along or learn with me, feel free to fork, star ⭐ this r
 
 ---
 
+## 🤝 How to Contribute
+
+- 🍴 Fork this repo  
+- 👯 Add your Java programs or improve existing ones  
+- 🔁 Submit a Pull Request
+
+---
+
 ## 📣 Stay Connected
 
-If you have suggestions, want to collaborate, or just want to say hi, feel free to connect with me on :
-
-🔗 [LinkedIn – Chandan Saha](https://www.linkedin.com/in/chandansaha2005/)
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="20" /> [LinkedIn – Chandan Saha](https://www.linkedin.com/in/chandansaha2005/)  
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/instagram/instagram-original.svg" width="20" /> [Instagram – @c_h_a_n_d_a_n_0_1](https://www.instagram.com/c_h_a_n_d_a_n_0_1)  
+- <img src="https://img.icons8.com/color/48/gmail--v1.png" width="20" /> [Email – chandansaha1945@gmail.com](mailto:chandansaha1945@gmail.com)
 
 ---
 
