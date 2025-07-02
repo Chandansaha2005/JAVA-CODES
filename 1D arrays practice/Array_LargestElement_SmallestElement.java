@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Array_LastElement_FirstElement {
+public class Array_LargestElement_SmallestElement {
     static void printArray(int a[]) {
         System.out.print("Array = ");
         for (int i = 0; i < a.length; i++) {
@@ -9,31 +9,18 @@ public class Array_LastElement_FirstElement {
     }
 
     static void arrengedArray(int a[]) {
-        int min = a[0], temp = 0;
+        int min = a[0], max = a[0];
         for (int index = 1; index < a.length; index++) {
             if (a[index] < min) {
-                temp = a[index];
-                a[index] = min;
-                a[index - 1] = temp;
+                min = a[index];
+            }
+            if (a[index] > max) {
+                max = a[index];
             }
         }
-        printArray(a);
-    }
-
-    static void checkSortedArray(int a[]) {
-        boolean flag = true;
-        for (int i = 1; i < a.length; i++) {
-            if (a[i] < a[i - 1]) {
-                flag = false;
-                break;
-            }
-        }
-        if (flag) {
-            System.out.println("Array Is All Ready Sorted");
-        } else {
-            System.out.println("After Arranging Elements :-");
-            arrengedArray(a);
-        }
+        int b[] = { min, max };
+        System.out.print("\nSmallest and Greatest element ");
+        printArray(b);
     }
 
     public static void main(String[] args) {
@@ -46,7 +33,7 @@ public class Array_LastElement_FirstElement {
             arr[i] = sc.nextInt();
         }
         printArray(arr);
-        checkSortedArray(arr);
+        arrengedArray(arr);
         sc.close();
     }
 }
