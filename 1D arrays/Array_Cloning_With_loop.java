@@ -18,7 +18,6 @@ public class Array_Cloning_With_loop {
             arr2[index] = arr[index];
         }
         sc.close();
-        arr2 = arr.clone();
         System.out.print("\nOrignal Array = ");
         PrintArray(arr);
         System.out.print("\nCopied Array = ");
