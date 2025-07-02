@@ -36,6 +36,17 @@ public class Array_Cloning_With_Functions {
 
         int arr3[] = Arrays.copyOf(arr, arr.length);
         ComArray(arr, arr3);
+
+        arr3[0] = 0;
+        arr3[1] = 0;
+        ComArray(arr, arr3);
+
+        int arr4[] = Arrays.copyOfRange(arr, 1, 4);
+        ComArray(arr, arr4);
+
+        arr4[0] = 0;
+        arr4[1] = 0;
+        ComArray(arr, arr4);
         sc.close();
     }
 }
