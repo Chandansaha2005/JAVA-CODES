@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Array_LargestElement_SmallestElement {
     static void printArray(int a[]) {
@@ -23,6 +23,16 @@ public class Array_LargestElement_SmallestElement {
         printArray(b);
     }
 
+    static void kthArrengedArray(int a[], int k) {
+        int min, max;
+        Arrays.sort(a);
+        min = a[0 + (k - 1)];
+        max = a[(a.length - 1) - k + 1];
+        int b[] = { min, max };
+        System.out.print("\nKth Smallest and Greatest element ");
+        printArray(b);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter The Number Of Element=");
@@ -34,6 +44,9 @@ public class Array_LargestElement_SmallestElement {
         }
         printArray(arr);
         arrengedArray(arr);
+        System.out.print("\nEnter kth value = ");
+        int k = sc.nextInt();
+        kthArrengedArray(arr, k);
         sc.close();
     }
 }
