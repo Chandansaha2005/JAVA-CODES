@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Array_Cloning {
+public class Array_Cloning_With_loop {
     static void PrintArray(int a[]) {
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
