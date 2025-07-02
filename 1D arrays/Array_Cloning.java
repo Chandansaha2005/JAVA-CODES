@@ -14,6 +14,9 @@ public class Array_Cloning {
         for (int i = 0; i < arr2.length; i++) {
             arr[i] = sc.nextInt();
         }
+        for (int index = 0; index < arr.length; index++) {
+            arr2[index] = arr[index];
+        }
         sc.close();
         arr2 = arr.clone();
         System.out.print("\nOrignal Array = ");
