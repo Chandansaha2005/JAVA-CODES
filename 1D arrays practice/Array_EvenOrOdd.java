@@ -1,6 +1,6 @@
-import java.util.*;
+import java.util.Scanner;
 
-public class Array_even_odd {
+public class Array_EvenOrOdd {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
