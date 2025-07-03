@@ -1,10 +1,12 @@
+
+//Find the pair s in the array whose sum is equal to the given value "t"
 import java.util.Scanner;
 
 public class Array_TwoElementSum {
 
     static void targetSum(int a[], int t) {
         int f = 0;
-        System.out.println("Pairs Which Sum = " + t + " :-");
+        System.out.println("Pairs Whose Sum = " + t + " :-");
         for (int i = 0; i < a.length - 1; i++) {
             for (int j = i + 1; j < a.length; j++) {
                 if (a[i] + a[j] == t) {
@@ -15,7 +17,8 @@ public class Array_TwoElementSum {
         }
         if (f == 0) {
             System.out.print("No pair found");
-        }
+        } else
+            System.out.print(f + " pair found");
     }
 
     static void printArray(int a[]) {
