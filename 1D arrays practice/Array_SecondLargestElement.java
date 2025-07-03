@@ -1,16 +1,17 @@
 import java.util.Scanner;
 
 public class Array_SecondLargestElement {
-    static void secondLargestElemenet(int a[]) {
-        for (int i = 0; i < a.length; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[i] > a[j]) {
-                    int temp = a[j];
-                    a[j] = a[i];
-                    a[i] = temp;
-                }
+    static int maxValueinArray(a[]){
+        int max = a[0];
+        for (int index = 1; index < a.length; index++) {
+            if(a[i]>max){
+                a[i]=max;
             }
         }
+    }
+
+    static void secondLargestElemenet(int a[]) {
+
         System.out.print("The Second Largest Number In This Array = " + a[a.length - 2]);
     }
 
