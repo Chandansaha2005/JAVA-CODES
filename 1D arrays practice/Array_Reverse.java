@@ -2,12 +2,13 @@ import java.util.Scanner;
 
 public class Array_Reverse {
     static int[] ReverseArray(int a[]) {
-        for (int i = a.length - 1, j = 0; i >= 0; i++, j++) {
-            a[j++] = a[i];
+        int ans[] = new int[a.length];
+        for (int i = a.length - 1, j = 0; i >= 0; i--) {
+            ans[j++] = a[i];
         }
-        return a;
+        return ans;
     }
-
+    // For less Space Complexity
     // static int[] ReverseArray(int a[]) {
     // for (int i = 0; i < a.length; i++) {
     // int temp = a[i];
@@ -37,9 +38,8 @@ public class Array_Reverse {
             arr[i] = sc.nextInt();
         }
         printArray(arr);
-        ReverseArray(arr);
         System.out.print("After Reversing :-");
-        printArray(arr);
+        printArray(ReverseArray(arr));
         sc.close();
     }
 }
