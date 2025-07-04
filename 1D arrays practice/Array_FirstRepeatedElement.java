@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Array_FirstRepeatedElement {
     static int firstRepeated(int a[]) {
-        int res = 0;
         for (int i = 0; i < a.length; i++) {
             for (int j = i + 1; j < a.length; j++) {
                 if (a[j] == a[i]) {
