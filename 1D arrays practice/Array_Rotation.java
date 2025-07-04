@@ -34,5 +34,6 @@ public class Array_Rotation {
         for (int i = 0; i < k; i++) {
             printArray(RotateArray(arr));
         }
+        sc.close();
     }
 }

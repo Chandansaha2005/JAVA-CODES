@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-public class Array_InsertAtFirst {
-    static int[] insertAtFirst(int a[], int k) {
+public class Array_InsertAtAnyPosition {
+    static int[] insertAtFirst(int a[], int k, int p) {
         for (int i = a.length - 2; i >= 0; i--) {
             a[i + 1] = a[i];
         }
@@ -20,15 +20,16 @@ public class Array_InsertAtFirst {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter The Number Of Element = ");
         int n = sc.nextInt();
-        int arr[] = new int[n], k;
-        System.out.println("Enter the Element(s)= ");
+        int arr[] = new int[n], k, p;
+        System.out.print("Enter the Element(s)= ");
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
         printArray(arr);
         System.out.print("\nEnter The Number You Want To Insert At First = ");
         k = sc.nextInt();
-        printArray(insertAtFirst(arr, k));
-        sc.close();
+        System.out.print("\nEnter The Number of Position Whare You Want To Insert At First = ");
+        p = sc.nextInt();
+        printArray(insertAtFirst(arr, k, p));
     }
 }
