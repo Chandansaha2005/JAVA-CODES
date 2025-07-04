@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Array_IntegerSwap {
     static int[] SwapIntergers(int a[]) {
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < a.length;) {
             int temp = a[i];
             a[i] = a[i + 1];
             a[i + 1] = temp;
