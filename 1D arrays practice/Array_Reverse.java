@@ -2,15 +2,22 @@ import java.util.Scanner;
 
 public class Array_Reverse {
     static int[] ReverseArray(int a[]) {
-        for (int i = 0; i < a.length; i++) {
-            int temp = a[i];
-            a[i] = a[a.length - (i + 1)];
-            a[a.length - (i + 1)] = temp;
-            if (i == a.length / 2)
-                break;
+        for (int i = a.length - 1, j = 0; i >= 0; i++, j++) {
+            a[j++] = a[i];
         }
         return a;
     }
+
+    // static int[] ReverseArray(int a[]) {
+    // for (int i = 0; i < a.length; i++) {
+    // int temp = a[i];
+    // a[i] = a[a.length - (i + 1)];
+    // a[a.length - (i + 1)] = temp;
+    // if (i == a.length / 2)
+    // break;
+    // }
+    // return a;
+    // }
 
     static void printArray(int a[]) {
         System.out.print("\nArray = ");
