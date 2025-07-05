@@ -3,15 +3,17 @@ import java.util.Scanner;
 public class Array_Rotation {
     static int[] RotateArray(int a[], int k) {
         int l = a.length;
-        if (k > l + 1)
-            k = k % 2;
-        for (int j = 0; j < k; j++) {
-            int temp = a[l - 1];
+        if (k % l != 0) {
+            if (k > l + 1)
+                k = k % 2;
+            for (int j = 0; j < k; j++) {
+                int temp = a[l - 1];
 
-            for (int i = l - 2; i >= 0; i--) {
-                a[i + 1] = a[i];
+                for (int i = l - 2; i >= 0; i--) {
+                    a[i + 1] = a[i];
+                }
+                a[0] = temp;
             }
-            a[0] = temp;
         }
         return a;
     }
