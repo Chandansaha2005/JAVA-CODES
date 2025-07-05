@@ -31,5 +31,6 @@ public class Array_InsertAtAnyPosition {
         System.out.print("\nEnter The Number of Position Whare You Want To Insert At First = ");
         p = sc.nextInt();
         printArray(insertAtFirst(arr, k, p));
+        sc.close();
     }
 }
