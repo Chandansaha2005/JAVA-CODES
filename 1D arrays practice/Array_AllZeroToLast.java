@@ -4,23 +4,17 @@ import java.util.Scanner;
 public class Array_AllZeroToLast {
 
     static int[] pushZerosToEnd(int[] arr) {
-        Arrays.sort(arr);//0 0 1 2 3 
-        int ans[] = new int[arr.length];
-        for (int i = arr.length - 1, j = 0; i >= 0; i--) {
-            ans[j++] = arr[i];
-        }//3 2 1 0 0
-        for (int i = 0; i < ans.length - 1; i++) {
-            for (int j = i+1; j < ans.length; j++) {
-                if (ans[i] == 0 || ans[j] == 0)
-                    break;
-                if (ans[i] > ans[j]) {
-                    int temp = ans[i];
-                    ans[i] = ans[j];
-                    ans[j] = temp;
-                }
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                arr[count++] = arr[i];
             }
-        }// 1 2 3 0 0
-        return ans;
+        }
+        while (count < arr.length) {
+            arr[count++] = 0;
+        }
+
+        return arr;
     }
 
     static void printArray(int a[]) {
