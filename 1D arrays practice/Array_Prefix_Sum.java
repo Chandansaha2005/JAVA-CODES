@@ -2,13 +2,12 @@ import java.util.Scanner;
 
 public class Array_Prefix_Sum {
 
-    static int[] prefixSum(int arr[]) {
+    static void prefixSum(int arr[]) {
         int f = 0;
         for (int i = 0; i < arr.length; i++) {
             f += arr[i];
             arr[i] = f;
         }
-        return arr;
     }
 
     static void printArray(int a[]) {
@@ -29,7 +28,8 @@ public class Array_Prefix_Sum {
             arr[i] = sc.nextInt();
         }
         printArray(arr);
-        printArray(prefixSum(arr));
+        prefixSum(arr);
+        printArray(arr);
         sc.close();
     }
 }
