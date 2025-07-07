@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Array_RangeSumQueries {
     static int prefixSum(int arr[], int l, int r) {
         int f = 0;
-        for (int i = l; i <= r; i++) {
+        for (int i = l - 1; i < r; i++) {
             f += arr[i];
         }
         return f;
@@ -27,11 +27,11 @@ public class Array_RangeSumQueries {
             arr[i] = sc.nextInt();
         }
         printArray(arr);
-        System.out.print("Enter the Starting Index = ");
+        System.out.print("Enter the Starting = ");
         l = sc.nextInt();
-        System.out.print("Enter the Ending Index = ");
+        System.out.print("Enter the Ending = ");
         r = sc.nextInt();
-        System.out.print("Sum from Index " + l + " to Index " + r + " = " + prefixSum(arr, l, r));
+        System.out.print("Sum from Index " + (l - 1) + " to Index " + (r - 1) + " = " + prefixSum(arr, l, r));
         sc.close();
     }
 }
