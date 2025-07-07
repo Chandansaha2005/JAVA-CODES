@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class Array_Prefix_Sum {
-
-    static void prefixSum(int arr[]) {
+public class Array_RangeSumQueries {
+    static void prefixSum(int arr[],int l , int r) {
+        System.out.print("Enter the starting ");
         int f = 0;
         for (int i = 0; i < arr.length; i++) {
             f += arr[i];
@@ -23,12 +23,12 @@ public class Array_Prefix_Sum {
         System.out.print("Enter The Number Of Element = ");
         int n = sc.nextInt();
         int arr[] = new int[n];
-        System.out.print("Enter the Elements = ");
+        System.out.print("Enter the Elements in Sorted manner = ");
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
         printArray(arr);
-        prefixSum(arr);
+        prefixSum(arr,l,r);
         printArray(arr);
         sc.close();
     }
