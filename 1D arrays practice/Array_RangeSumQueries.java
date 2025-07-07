@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
 public class Array_RangeSumQueries {
-    static void prefixSum(int arr[],int l , int r) {
-        System.out.print("Enter the starting ");
+    static int prefixSum(int arr[], int l, int r) {
         int f = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = l; i <= r; i++) {
             f += arr[i];
-            arr[i] = f;
         }
+        return f;
     }
 
     static void printArray(int a[]) {
@@ -22,14 +21,17 @@ public class Array_RangeSumQueries {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter The Number Of Element = ");
         int n = sc.nextInt();
-        int arr[] = new int[n];
+        int arr[] = new int[n], l = 0, r = 0;
         System.out.print("Enter the Elements in Sorted manner = ");
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
         printArray(arr);
-        prefixSum(arr,l,r);
-        printArray(arr);
+        System.out.print("Enter the Starting Index = ");
+        l = sc.nextInt();
+        System.out.print("Enter the Ending Index = ");
+        r = sc.nextInt();
+        System.out.print("Sum from Index " + l + " to Index " + r + " = " + prefixSum(arr, l, r));
         sc.close();
     }
 }
