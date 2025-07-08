@@ -3,16 +3,16 @@ import java.util.Scanner;
 public class Array_RotationViseVersa {
     static void rotateArr(int arr[], int d) {
         int l = arr.length;
-        if (d % l != 0)
-            if (d > l + 1)
+        if (d % l != 0) {
+            if (d > l+1)
                 d = d % 2;
-        for (int j = 0; j < d; j++) {
-            int temp = arr[0];
-            for (int i = 1; i < arr.length; i++) {
-                System.out.println(arr[i]);
-                arr[i - 1] = arr[i];
+            for (int j = 0; j < d; j++) {
+                int temp = arr[0];
+                for (int i = 1; i < arr.length; i++) {
+                    arr[i - 1] = arr[i];
+                }
+                arr[arr.length - 1] = temp;
             }
-            arr[arr.length - 1] = temp;
         }
     }
 
