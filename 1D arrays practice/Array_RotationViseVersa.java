@@ -1,27 +1,22 @@
 import java.util.Scanner;
 
 public class Array_RotationViseVersa {
-    static void rotateArr(int[] arr, int d) {
+    static void rotateArr(int arr[], int d) {
         int n = arr.length;
-        if (n == 0)
-            return;
-        d = ((d % n) + n) % n;
-        if (d == 0)
-            return;
-        for (int i = 0, j = d - 1; i < j; i++, j--) {
-            int tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;
-        }
-        for (int i = d, j = n - 1; i < j; i++, j--) {
-            int tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;
-        }
-        for (int i = 0, j = n - 1; i < j; i++, j--) {
-            int tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;
+        if(n==0) return;
+        d=((d%n)+n)%n;
+        if(d==0) return;
+
+        rev(0,d-1,arr);
+        rev(d,n-1,arr);
+        rev(0,n-1,arr);
+        
+    }
+    static void rev(int a ,int b ,int arr[]){
+        for(int i = a,j=b;i<j;i++,j--){
+            int temp =arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
         }
     }
 
