@@ -34,6 +34,6 @@ public class Array_SmallestMissingElement {
         input(arr);
         printArray(arr);
         Arrays.sort(arr);
-        System.out.print("Product of all Element in The Array = " + smallestMissing(arr));
+        System.out.print("Smallest Positive Missing Number in The Array = " + smallestMissing(arr));
     }
 }

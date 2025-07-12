@@ -34,7 +34,7 @@ public class Array_Greater_Element {
             arr[i] = sc.nextInt();
         }
         printArray(arr);
-        System.out.print("\nEnter the elements U12 Search = ");
+        System.out.print("\nEnter the elements U12 Compare = ");
         int x = sc.nextInt();
         checkDublicate(arr, x);
         sc.close();
