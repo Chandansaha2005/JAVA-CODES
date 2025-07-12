@@ -5,11 +5,12 @@ public class Array_LargestThreeElement {
     static Scanner sc = new Scanner(System.in);
 
     static int[] largestThree(int arr[]) {
-        int ans[] = new int[3], i = 0;
-        ans[i] = arr[0];
-        for (int j = 1; j < arr.length; j++) {
-            if (arr[j] > arr[j - 1]) {
-                ans[i++] = arr[j];
+        int ans[] = { 0, 0, 0 };
+        for (int i = 1; i <= ans.length; i++) {
+            for (int j = 1; j < arr.length; j++) {
+                if (arr[j] < arr[j - 1] && arr[j - 1] != ans[i - 1]) {
+                    ans[i - 1] = arr[j - 1];
+                }
             }
         }
         return ans;
