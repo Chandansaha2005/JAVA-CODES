@@ -1,19 +1,19 @@
 import java.util.Scanner;
 
-public class Array_UniqueElement {
+public class Array_PalindromeCheck {
     static Scanner sc = new Scanner(System.in);
 
-    static int uniqueElement(int arr[]) {
-        int f = 1;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = arr.length - 1; j >= 0; j--) {
-                if (arr[i] != arr[j]) {
-                    f = arr[i];
-                } else
-                    f = 0;
+    static void palindrome(int arr[]) {
+        boolean f = true;
+        for (int i = 0, j = arr.length - 1; i <= j; i++, j--) {
+            if (arr[i] != arr[j]) {
+                f = false;
             }
         }
-        return f;
+        if (f == true)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
     }
 
     static void printArray(int arr[]) {
@@ -33,6 +33,7 @@ public class Array_UniqueElement {
         System.out.print("Enter the number of elements = ");
         int arr[] = new int[sc.nextInt()];
         input(arr);
-        System.out.print(uniqueElement(arr));
+        palindrome(arr);
     }
+
 }
