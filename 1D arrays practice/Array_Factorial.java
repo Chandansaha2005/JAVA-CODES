@@ -6,9 +6,14 @@ public class Array_Factorial {
     static int multiply(int j, int arr[], int size) {
         int rem = 0;
         for (int i = 0; i < size; i++) {
-
+            int p = arr[i] * j + rem;
+            arr[i] = p % 10;
+            rem = p / 10;
         }
-        return arr;
+        while (rem==1) {
+            
+        }
+        return size;
     }
 
     static void factorial(int n) {
