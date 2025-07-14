@@ -5,7 +5,7 @@ public class Array_Factorial {
 
     static int multiply(int j, int arr[], int size) {
         int rem = 0;
-        for (int i = 1, j = 0; i <= n; i = n / 10) {
+        for (int i = 0; i < size; i++) {
 
         }
         return arr;
