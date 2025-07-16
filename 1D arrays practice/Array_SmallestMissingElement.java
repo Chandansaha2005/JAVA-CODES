@@ -5,13 +5,14 @@ public class Array_SmallestMissingElement {
     static Scanner sc = new Scanner(System.in);
 
     static int smallestMissing(int arr[]) {
-        int num = 0;
-        for (int i = arr.length - 1; i > 0; i--) {
-            if (arr[i] - 1 != arr[i - 1]) {
-                num = arr[i] - 1;
+        Arrays.sort(arr);
+        int smallest = 1;
+        for (int num : arr) {
+            if (num == smallest) {
+                smallest++;
             }
         }
-        return num;
+        return smallest;
     }
 
     static void printArray(int arr[]) {
@@ -33,7 +34,7 @@ public class Array_SmallestMissingElement {
         int arr[] = new int[sc.nextInt()];
         input(arr);
         printArray(arr);
-        Arrays.sort(arr);
-        System.out.print("Smallest Positive Missing Number in The Array = " + smallestMissing(arr));
+
+        System.out.print("\nSmallest Positive Missing Number in The Array = " + smallestMissing(arr));
     }
 }
