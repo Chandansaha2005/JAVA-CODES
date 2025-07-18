@@ -37,8 +37,6 @@ public class Array_MaximumProductSubarray {
         System.out.print("Enter the number of elements = ");
         int arr[] = new int[sc.nextInt()];
         input(arr);
-        printArray(arr);
-
-        System.out.print("\nSmallest Positive Missing Number in The Array = " + maxProduct(arr));
+        System.out.print("\nMaximum product of subarray in The Array = " + maxProduct(arr));
     }
 }
