@@ -1,7 +1,7 @@
 public class threadDeclare {
     public static void main(String[] args) {
         Thread t = new Thread();
-        System.out.println(t.currentThread());
+        System.out.println(Thread.currentThread());
         t.setName("Rabindra");
         System.out.println(t);
         t.setPriority(10);
