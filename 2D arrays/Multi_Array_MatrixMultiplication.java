@@ -5,15 +5,12 @@ public class Multi_Array_MatrixMultiplication {
 
     static int[][] Multiply2dArrays(int arr1[][], int arr2[][], int r1, int c1, int r2, int c2) {
         int[][] ans = new int[r1][c2];
-        int temp = 0;
         for (int i = 0; i < r1; i++) {
-            for (int j = 0; j < c1; j++) {
-                temp += arr1[i][j] * arr2[i][j];
-            }
             for (int j = 0; j < c2; j++) {
-                ans[i][j] = temp;
+                for (int k = 0; k < c1; k++) {
+                    ans[i][j] += (arr1[i][k] * arr2[k][j]);
+                }
             }
-            temp = 0;
         }
         return ans;
     }
@@ -41,22 +38,28 @@ public class Multi_Array_MatrixMultiplication {
     public static void main(String[] args) {
 
         System.out.print("Enter the no. of Rows of 1st Matrices = ");
-        int r = sc.nextInt();
+        int r1 = sc.nextInt();
         System.out.print("Enter the no. of Columns of 1st Matrices = ");
-        int c = sc.nextInt();
-        System.out.println("2nd Matrix's no. of Rows is Same as 1st Matrix's no. of Column");
+        int c1 = sc.nextInt();
+        System.out.print("Enter the no. of Rows of 1st Matrices = ");
+        int r2 = sc.nextInt();
         System.out.print("Enter the no. of Columns of 1st Matrices = ");
         int c2 = sc.nextInt();
-        int arr1[][] = new int[r][c];
-        int arr2[][] = new int[c][c2];
-        System.out.println("Enter Elements for 1st Matrix:-");
-        input2dArray(arr1);
-        print2dArray(arr1);
-        System.out.println("Enter Elements for 1st Matrix:-");
-        input2dArray(arr2);
-        print2dArray(arr2);
-        System.out.println("Multiplication of This Two Matrix :-");
-        print2dArray(Multiply2dArrays(arr1, arr2, r, c, c, c2));
+        if (c1 != r2) {
+            System.out.println("WRONG INPUT !!! \nNo. of Columns of 1st Matrix And No. Rows Of 2nd Matrix Should be ");
+
+        } else {
+            int arr1[][] = new int[r1][c1];
+            int arr2[][] = new int[r2][c2];
+            System.out.println("Enter Elements for 1st Matrix:-");
+            input2dArray(arr1);
+            print2dArray(arr1);
+            System.out.println("Enter Elements for 1st Matrix:-");
+            input2dArray(arr2);
+            print2dArray(arr2);
+            System.out.println("Multiplication of This Two Matrix :-");
+            print2dArray(Multiply2dArrays(arr1, arr2, r1, c1, r2, c2));
+        }
         sc.close();
     }
 }
