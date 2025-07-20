@@ -38,11 +38,10 @@ public class Array_MajorityElements {
         if (c2 > n / 3)
             result.add(candi2);
         if (result.size() == 2) {
-                if (result.get(0) > result.get(1)) {
-                    java.util.Collections.swap(result, 0, 1);
-                    break;
-                }
+            if (result.get(0) > result.get(1)) {
+                java.util.Collections.swap(result, 0, 1);
             }
+        }
         return result;
     }
 
@@ -68,4 +67,4 @@ public class Array_MajorityElements {
         }
         sc.close();
     }
-}z
+}
