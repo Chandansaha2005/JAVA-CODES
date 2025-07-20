@@ -2,13 +2,19 @@ import java.util.Scanner;
 
 public class Multi_Array_MatrixCreation {
     public static void main(String[] args) {
-        int arr[][] = new int[3][3];
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the no. of Rows = ");
+        int r = sc.nextInt();
+        System.out.print("Enter the no. of Columns = ");
+        int c = sc.nextInt();
+        int arr[][] = new int[r][c];
+
         for (int i = 0; i < arr.length; i++) {
-            System.err.print("Enter the Elements of " + (i + 1) + " no. Row = ");
             for (int j = 0; j < arr[i].length; j++) {
+                System.err.print("Enter the Element of " + (i + 1) + " no. row & " + (j + 1) + " no. Column = ");
                 arr[i][j] = sc.nextInt();
             }
+            System.out.println();
         }
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
@@ -16,5 +22,6 @@ public class Multi_Array_MatrixCreation {
             }
             System.out.println();
         }
+        sc.close();
     }
 }
