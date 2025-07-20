@@ -13,6 +13,17 @@ public class Multi_Array_Matrix_Transpose {
         return trans;
     }
 
+    static int[][] TransposeInPlace(int arr[][], int r, int c) {
+        for (int i = 0; i < c; i++) {
+            for (int j = i; j < r; j++) {
+                int temp = arr[i][j];
+                arr[i][j] = arr[j][i];
+                arr[j][i] = temp;
+            }
+        }
+        return arr;
+    }
+
     static void input2dArray(int arr[][]) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
@@ -44,7 +55,8 @@ public class Multi_Array_Matrix_Transpose {
         input2dArray(arr);
         print2dArray(arr);
         System.out.println("Transpose Of This Matrix :-");
-        print2dArray(Transpose(arr, r, c));
+        // print2dArray(Transpose(arr, r, c));
+        print2dArray(TransposeInPlace(arr, r, c));
         sc.close();
     }
 }
