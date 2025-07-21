@@ -17,25 +17,25 @@ public class Multi_Array_SpiralOrder {
         System.out.println("Elements in Spiral Order :--");
         while (total < r * c) {
             // topRow -> firstColumn to lastColumn
-            for (int i = firstColumn; i <= lastColumn; i++) {
+            for (int i = firstColumn; i <= lastColumn && total < r * c; i++) {
                 System.out.print(arr[topRow][i] + " ");
                 total++;
             }
             topRow++;
             // lastColumn -> topRow to buttomRow
-            for (int i = topRow; i <= buttomRow; i++) {
+            for (int i = topRow; i <= buttomRow && total < r * c; i++) {
                 System.out.print(arr[i][lastColumn] + " ");
                 total++;
             }
             lastColumn--;
             // buttomRow -> lastColumn to firstColumn
-            for (int i = lastColumn; i >= firstColumn; i--) {
+            for (int i = lastColumn; i >= firstColumn && total < r * c; i--) {
                 System.out.print(arr[buttomRow][i] + " ");
                 total++;
             }
             buttomRow--;
             // firstColumn -> buttomRow to topRow
-            for (int i = buttomRow; i >= topRow; i--) {
+            for (int i = buttomRow; i >= topRow && total < r * c; i--) {
                 System.out.print(arr[i][firstColumn] + " ");
                 total++;
             }
