@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class Divisible_By_13 {
     static boolean Solution(String s) {
-        int n = Integer.parseInt(s);
-        return (n % 13 == 0);
+        return (Integer.parseInt(s) % 13 == 0);
     }
 
     public static void main(String[] args) {
