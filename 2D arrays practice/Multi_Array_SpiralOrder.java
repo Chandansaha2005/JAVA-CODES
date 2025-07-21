@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Multi_Array_SpiralMatrix {
+public class Multi_Array_SpiralOrder {
     static int[][] spiralMatrix(int n){
         int arr[][]=new int[n-1][n-1];
         
