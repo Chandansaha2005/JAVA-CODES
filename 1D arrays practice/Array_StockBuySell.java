@@ -2,7 +2,26 @@ import java.util.Scanner;
 
 public class Array_StockBuySell {
     static Scanner sc = new Scanner(System.in);
-    
+
+    static int max(int arr[], int start) {
+        int max = arr[0];
+        for (int i = start + 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
+                max = arr[i - 1];
+            }
+        }
+        return max;
+    }
+
+    static int maxProfit(int arr[]) {
+        int max = 0, buy = 0, sell = 0, Profit = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i - 1] < arr[i]) {
+                Profit-=arr[i-1];
+        }else if(arr[])
+        return Profit;
+    }
+
     static void printArray(int arr[]) {
         System.out.print("Array = ");
         for (int i = 0; i < arr.length; i++) {
@@ -21,7 +40,6 @@ public class Array_StockBuySell {
         System.out.print("Enter the number of elements = ");
         int arr[] = new int[sc.nextInt()];
         input(arr);
-        printArray(arr);
-        System.out.print("Product of all Element in The Array = " + productOfSum(arr));
+        System.out.print("Maximum Profit = " + maxProfit(arr));
     }
 }
