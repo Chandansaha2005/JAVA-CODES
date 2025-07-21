@@ -1,8 +1,21 @@
 import java.util.Scanner;
 
 public class Multi_Array_PrefixSum {
+    static int prefixSum(int arr[][], int s1, int s2, int e1, int e2) {
+        int sum = 0;
+        System.out.println("Elemenets :- ");
+        for (int i = s1; i <= e1; i++) {
+            for (int j = s2; j <= e2; j++) {
+                System.out.print(arr[i][j] + " ");
+                sum += arr[i][j];
+            }
+            System.out.println();
+        }
+        return sum;
+    }
+
     static void print2dArray(int arr[][]) {
-        System.out.println("Matrix:- ");
+        System.out.println("\nMatrix:- ");
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 System.out.print(arr[i][j] + " ");
@@ -26,6 +39,16 @@ public class Multi_Array_PrefixSum {
             System.out.println();
         }
         print2dArray(arr);
+        System.out.println("---:Enter Co-Ordinates For Prefix Sum:---");
+        System.out.print("Enter the no. 1st Co-ordinate of Starting index = ");
+        int s1 = sc.nextInt();
+        System.out.print("Enter the no. 2nd Co-ordinate of Starting index = ");
+        int s2 = sc.nextInt();
+        System.out.print("Enter the no. 1st Co-ordinate of Ending index = ");
+        int e1 = sc.nextInt();
+        System.out.print("Enter the no. 2nd Co-ordinate of Ending index = ");
+        int e2 = sc.nextInt();
+        System.out.print("Prefix Sum = " + prefixSum(arr, s1, s2, e1, e2));
         sc.close();
     }
 }
