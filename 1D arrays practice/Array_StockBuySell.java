@@ -3,22 +3,13 @@ import java.util.Scanner;
 public class Array_StockBuySell {
     static Scanner sc = new Scanner(System.in);
 
-    static int max(int arr[], int start) {
-        int max = arr[0];
-        for (int i = start + 1; i < arr.length; i++) {
-            if (arr[i] < arr[i - 1]) {
-                max = arr[i - 1];
+    static int maxProfit(int arr[]) {
+        int Profit = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > arr[i - 1]) {
+                Profit += arr[i] - arr[i - 1];
             }
         }
-        return max;
-    }
-
-    static int maxProfit(int arr[]) {
-        int max = 0, buy = 0, sell = 0, Profit = 0;
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i - 1] < arr[i]) {
-                Profit-=arr[i-1];
-        }else if(arr[])
         return Profit;
     }
 
