@@ -10,8 +10,8 @@ public class Array_Factorial {
             arr[i] = p % 10;
             rem = p / 10;
         }
-        while (rem==1) {
-            
+        while (rem == 1) {
+
         }
         return size;
     }
