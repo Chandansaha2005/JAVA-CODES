@@ -1,12 +1,18 @@
+import java.util.*;
+
 public class ArrayList_PowerOfKinFact {
-    static int fact(int n) {
-        if (n < 2)
-            return 1;
-        return n * fact(n - 1);
+    static ArrayList<int[]> pfact(int n) {
+        ArrayList<int[]> f = new ArrayList<>();
+        int c = 0;
+        while (n % 2 == 0) {
+            n /= 2;
+            c++;
+        }
+        return f;
     }
 
     static int maxPower(int k, int n) {
-        n = fact(n);
+        ArrayList<int[]> f = pfact(k);
         int p = 0;
         while (n % k == 0) {
             p++;
@@ -16,6 +22,6 @@ public class ArrayList_PowerOfKinFact {
     }
 
     public static void main(String[] args) {
-        System.out.println(fact(6));
+        System.out.println(maxPower(2, 150));
     }
 }
