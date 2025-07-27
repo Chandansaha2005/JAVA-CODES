@@ -2,19 +2,21 @@ import java.util.Scanner;
 
 public class Multi_Array_PrefixSum_Pre_Calculating {
     static void prefixSumMatrix(int arr[][]) {
-        
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 1; j < arr[i].length; j++) {
+                arr[i][j] += arr[i][j - 1];
+            }
+        }
     }
 
     static int prefixSum(int arr[][], int s1, int s2, int e1, int e2) {
         int sum = 0;
         prefixSumMatrix(arr);
-        System.out.println("Elemenets :- ");
         for (int i = s1; i <= e1; i++) {
-            for (int j = s2; j <= e2; j++) {
-                System.out.print(arr[i][j] + " ");
-                sum += arr[i][j];
-            }
-            System.out.println();
+            if (s2 > 0)
+                sum += arr[i][e2] - arr[i][s2 - 1];
+            else
+                sum += arr[i][e2];
         }
         return sum;
     }
