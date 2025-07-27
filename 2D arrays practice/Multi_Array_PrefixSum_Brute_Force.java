@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Multi_Array_PrefixSum {
+public class Multi_Array_PrefixSum_Brute_Force {
     static int prefixSum(int arr[][], int s1, int s2, int e1, int e2) {
         int sum = 0;
         System.out.println("Elemenets :- ");
