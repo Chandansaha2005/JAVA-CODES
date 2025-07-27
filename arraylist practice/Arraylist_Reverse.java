@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Arraylist_Reverse {
     static void rev(ArrayList<Integer> all) {
@@ -18,7 +19,9 @@ public class Arraylist_Reverse {
         }
         System.out.println(all);
         // System.out.println(all.reversed());
-        rev(all);
+        // rev(all);
+        Collections.reverse(all);
         System.out.println(all);
+
     }
 }
