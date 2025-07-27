@@ -1,24 +1,30 @@
 import java.util.Scanner;
 
-public class Multi_Array_PrefixSum_Pre_Calculating {
-    static void prefixSumMatrix(int arr[][]) {
+public class Multi_Array_PrefixSum_Optimized {
+    static void prefixSumMatrixRowWise(int arr[][]) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 1; j < arr[i].length; j++) {
                 arr[i][j] += arr[i][j - 1];
             }
         }
     }
-    
+
+    static void prefixSumMatrixColumnWise(int arr[][]) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 1; j < arr[i].length; j++) {
+                arr[j][i] += arr[j - 1][i];
+            }
+        }
+    }
 
     static int prefixSum(int arr[][], int s1, int s2, int e1, int e2) {
         int sum = 0;
-        prefixSumMatrix(arr);
-        for (int i = s1; i <= e1; i++) {
-            if (s2 > 0)
-                sum += arr[i][e2] - arr[i][s2 - 1];
-            else
-                sum += arr[i][e2];
-        }
+        prefixSumMatrixRowWise(arr);
+        prefixSumMatrixColumnWise(arr);
+        if (s2 > 0)
+            sum += arr[e1][e2] - (arr[s1 - 1][e2] + arr[e1][s1 - 1]) + arr[s1 - 1][s2 - 1];
+        else
+            sum += arr[e1][e2];
         return sum;
     }
 
@@ -57,6 +63,7 @@ public class Multi_Array_PrefixSum_Pre_Calculating {
         System.out.print("Enter the no. 2nd Co-ordinate of Ending index = ");
         int e2 = sc.nextInt();
         System.out.print("Prefix Sum = " + prefixSum(arr, s1, s2, e1, e2));
+
         sc.close();
     }
 
