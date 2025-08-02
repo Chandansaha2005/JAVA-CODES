@@ -1,10 +1,8 @@
 import java.util.Scanner;
 
 public class MinCharsAddForPalindrome {
-    static int minChar(String s) {
+    static int[] calcuLPS(String s) {
         int n = s.length(), i = 1;
-        String rev = new StringBuilder(s).reverse().toString();
-        s = s + "#" + rev;
         int[] lps = new int[n];
         lps[0] = 0;
         int len = 0;
@@ -22,6 +20,14 @@ public class MinCharsAddForPalindrome {
                 }
             }
         }
+        return lps;
+    }
+
+    static int minChar(String s) {
+        int n = s.length();
+        String rev = new StringBuilder(s).reverse().toString();
+        s = s + "#" + rev;
+        int[] lps = calcuLPS(s);
         return (n - lps[lps.length - 1]);
     }
 
