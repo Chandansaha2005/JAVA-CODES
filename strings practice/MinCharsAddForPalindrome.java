@@ -1,13 +1,26 @@
 import java.util.Scanner;
 
 public class MinCharsAddForPalindrome {
+    static boolean palinCheck(String s, int res) {
+        int i = 0, j = (s.length() - 1) - res;
+        while (i < j) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+
     static int minChar(String s) {
         int res = 0;
-        StringBuilder sn = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            sn.append(s.charAt(i));
+            if (palinCheck(s, res)) {
+                return res;
+            } else
+                res++;
         }
-        
         return res;
     }
 
