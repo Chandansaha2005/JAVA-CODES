@@ -1,6 +1,32 @@
 import java.util.Scanner;
 
 public class Multi_Array_Row_Column_Sum_Equal {
+    static int balenceSum(int[][] mat) {
+        int res = 0, maxS = 0;
+        for (int i = 0; i < mat.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < mat.length; j++) {
+                sum += mat[i][j];
+            }
+            maxS = Math.max(maxS, sum);
+        }
+        for (int j = 0; j < mat.length; j++) {
+            int sum = 0;
+            for (int i = 0; i < mat.length; i++) {
+                sum += mat[i][j];
+            }
+            maxS = Math.max(maxS, sum);
+        }
+        for (int i = 0; i < mat.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < mat.length; j++) {
+                sum += mat[i][j];
+            }
+            res += maxS - sum;
+        }
+        return res;
+    }
+    
     static void print2dArray(int arr[][]) {
         System.out.println("\nMatrix:- ");
         for (int i = 0; i < arr.length; i++) {
@@ -26,5 +52,7 @@ public class Multi_Array_Row_Column_Sum_Equal {
             System.out.println();
         }
         print2dArray(arr);
+        System.out.println(balenceSum(arr));
+        ;
     }
 }
