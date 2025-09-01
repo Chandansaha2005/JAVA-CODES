@@ -66,6 +66,28 @@ Right now, I’ve completed topics up to:
   - String concatenation and immutability  
   - Using `StringBuilder` and `StringBuffer` for mutable strings  
 
+- ⏳ *Threading*
+  - Introduction to Threads  
+  - Creating threads using `Thread` class and `Runnable` interface  
+  - Thread lifecycle and states  
+  - Thread methods: `start()`, `sleep()`, `join()`, `isAlive()`  
+  - Synchronization basics  
+
+- 📋 *ArrayList*
+  - Introduction to `ArrayList` (dynamic arrays)  
+  - Adding, removing, and accessing elements  
+  - Iterating with for-each and Iterator  
+  - Useful methods: `size()`, `contains()`, `indexOf()`, `clear()`  
+
+- 🔍 *Searching & Sorting*
+  - Linear Search  
+  - Binary Search  
+  - Bubble Sort  
+  - Selection Sort  
+  - Insertion Sort  
+  - Merge Sort  
+  - Quick Sort
+
 *To Be Continued....*  
 🔗[CLICK HERE TO ACCESS ALL CODES](https://github.com/Chandansaha2005/JAVA-CODES/tree/main)
 
