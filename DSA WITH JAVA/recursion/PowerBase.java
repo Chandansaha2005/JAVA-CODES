@@ -1,4 +1,4 @@
-public class PowerBase {
+public class PowerBase { 
     static int power(int p, int q) {
         if (q == 0)
             return 1;
