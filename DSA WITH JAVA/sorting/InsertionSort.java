@@ -1,4 +1,3 @@
-
 public class InsertionSort {
     static void insertion(int arr[]) {
         int n = arr.length;
