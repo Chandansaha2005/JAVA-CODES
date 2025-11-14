@@ -1,9 +1,16 @@
 public class mergeSort {
-    static void MergeSort(int []arr,low,high){
-        mid=(low+high)/2;
-        MergeSort(arr,low,mid);
-        MergeSort(arr,mid+1,high);
-        merge
+    static void merge(int []arr,int low,int mid,int high){
+        int i , j ; 
+        
+    }
+
+    static void divide(int[] arr, int low, int high) {
+        if (low >= high)
+            return;
+        int mid = (low + high) / 2;
+        divide(arr, low, mid);
+        divide(arr, mid + 1, high);
+        merge(arr, low, mid, high);
     }
 
     static void printArray(int arr[]) {
@@ -16,7 +23,7 @@ public class mergeSort {
 
     public static void main(String args[]) {
         int arr[] = { 1, 2, 3, 9, 10, 7 };
-        MergeSort(arr, 0, arr.length - 1);
+        divide(arr, 0, arr.length - 1);
         printArray(arr);
     }
 }
