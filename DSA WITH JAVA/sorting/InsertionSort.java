@@ -1,14 +1,14 @@
 /**
- * The InsertionSort class contains a static method that implements the
- * insertion sort algorithm to
+ * The InsertionSortSort class contains a static method that implements the
+ * insertionSort sort algorithm to
  * sort an integer array in ascending order.
  */
 
-public class InsertionSort {
-    static void insertion(int arr[]) {
+public class InsertionSorting {
+    static void insertionSort(int arr[]) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
-            // This part of the code is the inner loop of the insertion sort algorithm. It
+            // This part of the code is the inner loop of the insertionSort sort algorithm. It
             // is
             // responsible for shifting elements to the right until the correct position for
             // the current
@@ -31,7 +31,7 @@ public class InsertionSort {
 
     public static void main(String args[]) {
         int arr[] = { 1, 2, 3, 9, 10, 7 };
-        insertion(arr);
+        insertionSort(arr);
         printArray(arr);
     }
 }
