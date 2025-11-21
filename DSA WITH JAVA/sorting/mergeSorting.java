@@ -97,5 +97,6 @@ public class mergeSorting {
         mergeSort(arr, 0, arr.length - 1);
         System.out.print("After Sorting : ");
         printArray(arr);
+        sc.close();
     }
 }

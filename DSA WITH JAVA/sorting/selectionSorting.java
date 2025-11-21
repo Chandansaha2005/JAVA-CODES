@@ -9,12 +9,16 @@ public class selectionSorting {
     }
 
     /**
-     * The selectionSort function sorts an array in ascending order using the selection sort algorithm.
+     * The selectionSort function sorts an array in ascending order using the
+     * selection sort algorithm.
      * 
-     * @param arr The `arr` parameter in the `selectionSort` method is an integer array that you want
-     * to sort in ascending order using the selection sort algorithm. The method iterates through the
-     * array, finding the minimum element in the unsorted portion of the array and swapping it with the
-     * element at the current index
+     * @param arr The `arr` parameter in the `selectionSort` method is an integer
+     *            array that you want
+     *            to sort in ascending order using the selection sort algorithm. The
+     *            method iterates through the
+     *            array, finding the minimum element in the unsorted portion of the
+     *            array and swapping it with the
+     *            element at the current index
      */
     static void selectionSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
