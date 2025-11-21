@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class bubbleSort {
+public class bubbleSorting {
 
     static void printArray(int[] arr, int n) {
         System.out.println("\nArray:- ");
@@ -9,7 +9,20 @@ public class bubbleSort {
         }
     }
 
-    static void bubble(int[] arr) {
+    /**
+     * The `bubbleSort` function implements the bubble sort algorithm to sort an
+     * array of integers in
+     * ascending order.
+     * 
+     * @param arr The `arr` parameter in the `bubbleSort` method is an integer array
+     *            that you want to
+     *            sort using the bubble sort algorithm. The method iterates through
+     *            the array comparing adjacent
+     *            elements and swapping them if they are in the wrong order,
+     *            eventually sorting the array in
+     *            ascending order.
+     */
+    static void bubbleSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -23,21 +36,15 @@ public class bubbleSort {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter the no. of elements = ");
         int n = sc.nextInt();
-
         int[] arr = new int[n];
-
         System.err.print("Enter the elements = ");
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++)
             arr[i] = sc.nextInt();
-        }
-
         printArray(arr, n);
-        bubble(arr);
+        bubbleSort(arr);
         printArray(arr, n);
-
         sc.close();
     }
 }
