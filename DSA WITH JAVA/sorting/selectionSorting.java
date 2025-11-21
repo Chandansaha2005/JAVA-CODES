@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class selectionSort {
+public class selectionSorting {
     static void printArray(int[] arr, int n) {
         System.out.println("\nArray:- ");
         for (int i = 0; i < arr.length; i++) {
@@ -8,7 +8,15 @@ public class selectionSort {
         }
     }
 
-    static void selection(int[] arr) {
+    /**
+     * The selectionSort function sorts an array in ascending order using the selection sort algorithm.
+     * 
+     * @param arr The `arr` parameter in the `selectionSort` method is an integer array that you want
+     * to sort in ascending order using the selection sort algorithm. The method iterates through the
+     * array, finding the minimum element in the unsorted portion of the array and swapping it with the
+     * element at the current index
+     */
+    static void selectionSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             int min = i;
             for (int j = i + 1; j < arr.length; j++) {
@@ -33,7 +41,7 @@ public class selectionSort {
             arr[i] = sc.nextInt();
         }
         printArray(arr, n);
-        selection(arr);
+        selectionSort(arr);
         printArray(arr, n);
         sc.close();
     }
