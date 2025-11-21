@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class quickSorting {
     static int partition(int arr[], int left, int right) {
-        int pivot = arr[right],i = left - 1;
+        int pivot = arr[right], i = left - 1;
 
         for (int j = left; j < right; j++) {
             if (arr[j] <= pivot) {
@@ -21,7 +21,8 @@ public class quickSorting {
     }
 
     static void quickSort(int arr[], int left, int right) {
-        if (left >= right) return;
+        if (left >= right)
+            return;
 
         int pivot = partition(arr, left, right);
         quickSort(arr, left, pivot - 1);
