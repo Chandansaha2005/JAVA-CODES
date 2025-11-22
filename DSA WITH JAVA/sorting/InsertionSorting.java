@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+ 
 public class InsertionSorting {
     /**
      * The `insertionSort` function implements the insertion sort algorithm to sort
