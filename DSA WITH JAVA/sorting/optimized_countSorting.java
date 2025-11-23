@@ -17,14 +17,14 @@ public class optimized_countSorting {
         int[] count = new int[max + 1];
         for (int i = 0; i < arr.length; i++)
             count[arr[i]]++;
-        for (int i = 1; i < count.length; i++) 
+        for (int i = 1; i < count.length; i++)
             count[i] += count[i - 1];
-        int[] res = new int[n + 1];
-        for (int i = n; i >= 0; i--) {
+        int[] res = new int[n];
+        for (int i = n - 1; i >= 0; i--) {
             res[count[arr[i]] - 1] = arr[i];
             count[arr[i]]--;
         }
-        for (int i = 0; i < res.length; i++) 
+        for (int i = 0; i < res.length; i++)
             arr[i] = res[i];
     }
 
@@ -49,7 +49,7 @@ public class optimized_countSorting {
         System.out.print("Before Sorting : ");
         printArray(arr);
 
-        countSort(arr, arr.length - 1);
+        countSort(arr, arr.length);
 
         System.out.print("After Sorting : ");
         printArray(arr);
