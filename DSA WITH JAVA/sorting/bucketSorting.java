@@ -7,11 +7,15 @@ public class bucketSorting {
     static void bucketSort(float arr[]) {
         int n = arr.length;
         ArrayList<Float>[] buckets = new ArrayList[n];
+
+        // Create empty buckets
         for (int i = 0; i < n; i++) {
             buckets[i] = new ArrayList<>();
-        
+        }
+
+        // Put array elements into buckets
         for (int i = 0; i < n; i++) {
-            int index = (int) (arr[i] * n);  // assumes arr[i] in [0,1)
+            int index = (int) (arr[i] * n); // assumes arr[i] in [0,1)
             buckets[index].add(arr[i]);
         }
 
