@@ -11,7 +11,7 @@ public class optimized_bubbleSort {
     }
 
     // Optimized Bubble Sort method
-    static void bubble(int[] arr) {
+    static void bubbleSort(int[] arr) {
         // Outer loop for each pass through the array
         for (int i = 0; i < arr.length - 1; i++) {
             System.out.println("\nIteration = " + (i + 1)); // Show current iteration
@@ -55,7 +55,7 @@ public class optimized_bubbleSort {
         }
 
         printArray(arr, n); // Print original array
-        bubble(arr);        // Sort the array using optimized Bubble Sort
+        bubbleSort(arr);        // Sort the array using optimized Bubble Sort
         printArray(arr, n); // Print sorted array
 
         sc.close(); // Close the Scanner to free resources
