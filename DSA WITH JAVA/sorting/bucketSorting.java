@@ -1,32 +1,36 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class bucketSorting {
-    static void bucketSort(int arr[]) {
-        int n = arr.length();
+
+    static void bucketSort(float arr[]) {
+        int n = arr.length;
         ArrayList<Float>[] buckets = new ArrayList[n];
         for (int i = 0; i < n; i++) {
             buckets[i] = new ArrayList<>();
-        }
+        
         for (int i = 0; i < n; i++) {
-            int index = (int) (arr[i] * n);
+            int index = (int) (arr[i] * n);  // assumes arr[i] in [0,1)
             buckets[index].add(arr[i]);
         }
+
+        // Sort individual buckets
         for (int i = 0; i < n; i++) {
-            Arrays.sort(buckets[i]);
+            Collections.sort(buckets[i]);
         }
+
+        // Concatenate all buckets back into arr
         int j = 0;
         for (int i = 0; i < n; i++) {
-            for (Float k = 0; k < buckets[i].size(); k++) {
+            for (int k = 0; k < buckets[i].size(); k++) {
                 arr[j++] = buckets[i].get(k);
             }
         }
     }
 
-    static void printArray(int arr[]) {
-        for (int num : arr) {
+    static void printArray(float arr[]) {
+        for (float num : arr) {
             System.out.print(num + " ");
         }
         System.out.println();
@@ -36,11 +40,11 @@ public class bucketSorting {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of elements = ");
         int n = sc.nextInt();
-        int arr[] = new int[n];
+        float arr[] = new float[n];
 
-        System.out.print("Enter elements = ");
+        System.out.print("Enter elements (between 0 and 1) = ");
         for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
+            arr[i] = sc.nextFloat();
         }
 
         System.out.print("Before Sorting : ");
