@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class optimized_countSorting {
+public class radixSorting {
 
     static int findMax(int[] arr) {
         int max = arr[0];
@@ -12,7 +12,7 @@ public class optimized_countSorting {
         return max;
     }
 
-    static void countSort(int arr[]) {
+    static void countSort(int arr[], int place) {
         int max = findMax(arr);
         int[] count = new int[max + 1];
 
@@ -30,6 +30,13 @@ public class optimized_countSorting {
 
         for (int i = 0; i < res.length; i++)
             arr[i] = res[i];
+    }
+
+    static void radixSort(int[] arr) {
+        int max = findMax(arr);
+        for (int place = 1; max / place > 0; place *= 10) {
+            countSort(arr, place);
+        }
     }
 
     static void printArray(int arr[]) {
@@ -53,7 +60,7 @@ public class optimized_countSorting {
         System.out.print("Before Sorting : ");
         printArray(arr);
 
-        countSort(arr);
+        radixSort(arr);
 
         System.out.print("After Sorting : ");
         printArray(arr);
