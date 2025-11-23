@@ -1,6 +1,6 @@
 import java.util.Scanner; // Import Scanner class for user input
 
-public class opti_bubbleSort {
+public class optimized_bubbleSort {
 
     // Method to print the elements of the array
     static void printArray(int[] arr, int n) {
