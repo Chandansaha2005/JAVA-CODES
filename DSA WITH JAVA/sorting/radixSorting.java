@@ -14,18 +14,18 @@ public class radixSorting {
 
     static void countSort(int arr[], int place) {
         int max = findMax(arr);
-        int[] count = new int[max + 1];
+        int[] count = new int[10];
 
         for (int i = 0; i < arr.length; i++)
-            count[arr[i]]++;
+            count[(arr[i] / place) % 10]++;
 
         for (int i = 1; i < count.length; i++)
             count[i] += count[i - 1];
 
         int[] res = new int[arr.length];
         for (int i = arr.length - 1; i >= 0; i--) {
-            res[count[arr[i]] - 1] = arr[i];
-            count[arr[i]]--;
+            res[count[(arr[i] / place) % 10] - 1] = arr[i];
+            count[(arr[i] / place) % 10]--;
         }
 
         for (int i = 0; i < res.length; i++)
