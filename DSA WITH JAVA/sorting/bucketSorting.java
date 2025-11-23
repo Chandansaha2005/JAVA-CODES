@@ -7,36 +7,21 @@ public class bucketSorting {
     static void bucketSort(float arr[]) {
         int n = arr.length;
         ArrayList<Float>[] buckets = new ArrayList[n];
-
-        // Create empty buckets
         for (int i = 0; i < n; i++) {
             buckets[i] = new ArrayList<>();
-        }
-
-        // Put array elements into buckets
-        for (int i = 0; i < n; i++) {
-            int index = (int) (arr[i] * n); // assumes arr[i] in [0,1)
-            buckets[index].add(arr[i]);
-        }
-
-        // Sort individual buckets
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+            buckets[(int) (arr[i] * n)].add(arr[i]);
+        for (int i = 0; i < n; i++) 
             Collections.sort(buckets[i]);
-        }
-
-        // Concatenate all buckets back into arr
         int j = 0;
-        for (int i = 0; i < n; i++) {
-            for (int k = 0; k < buckets[i].size(); k++) {
+        for (int i = 0; i < n; i++) 
+            for (int k = 0; k < buckets[i].size(); k++) 
                 arr[j++] = buckets[i].get(k);
-            }
-        }
     }
 
     static void printArray(float arr[]) {
-        for (float num : arr) {
+        for (float num : arr)
             System.out.print(num + " ");
-        }
         System.out.println();
     }
 
