@@ -4,18 +4,15 @@ public class shellSorting {
 
     static void shellSort(int arr[]) {
         int n = arr.length;
-        for (int gap = n / 2; gap > 0; gap /= 2) {
-            for (int i = gap; i < arr.length; i++) {
-                for (int j = i - gap; j >= 0; j -= gap) {
+        for (int gap = n / 2; gap > 0; gap /= 2)
+            for (int i = gap; i < arr.length; i++)
+                for (int j = i - gap; j >= 0; j -= gap)
                     if (arr[j + gap] < arr[j]) {
                         int temp = arr[j];
                         arr[j] = arr[j + gap];
                         arr[j + gap] = temp;
                     } else
                         break;
-                }
-            }
-        }
         // for (int gap = n / 2; gap > 0; gap /= 2)
         // for (int i = gap; i < n; i++) {
         // int temp = arr[i], j;
