@@ -19,7 +19,7 @@ public class negativeFollowedPositive {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 1, -2, -3, 8, -5, 6, 7, -4, 9 };
+        int[] arr = { -13, 20, 7, 0, -4, -13, 11, -5, -14 };
         partition(arr);
         for (int i : arr) {
             System.out.print(i + " ");
