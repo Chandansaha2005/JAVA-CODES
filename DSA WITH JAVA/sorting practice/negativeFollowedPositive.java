@@ -1,4 +1,4 @@
-public class negetiveFollowedPositive {
+public class negativeFollowedPositive {
     static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
@@ -6,8 +6,16 @@ public class negetiveFollowedPositive {
     }
 
     static void partition(int[] arr) {
-        int right = arr.length - 1, left = 0;
-        
+        int n = arr.length;
+        int i = 0, j = n - 1;
+        while (i < j) {
+            while (i < n && arr[i] < 0)
+                i++;
+            while (j >= 0 && arr[j] >= 0)
+                j--;
+            if (i < j)
+                swap(arr, i, j);
+        }
     }
 
     public static void main(String[] args) {
