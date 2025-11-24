@@ -5,25 +5,24 @@ public class shellSorting {
     static void shellSort(int arr[]) {
         int n = arr.length;
         for (int gap = n / 2; gap > 0; gap /= 2) {
-            for (int j = gap; j < arr.length; j++) {
-                for (int i = j - gap; i >= 0; i -= gap) {
-                    if (arr[i + gap] < arr[i]) {
-                        int temp = arr[i];
-                        arr[i] = arr[i + gap];
-                        arr[i + gap] = temp;
+            for (int i = gap; i < arr.length; i++) {
+                for (int j = i - gap; j >= 0; j -= gap) {
+                    if (arr[j + gap] < arr[j]) {
+                        int temp = arr[j];
+                        arr[j] = arr[j + gap];
+                        arr[j + gap] = temp;
                     } else
                         break;
                 }
             }
         }
-        for (int gap = n / 2; gap > 0; gap /= 2)
-            for (int i = gap; i < n; i++) {
-                int temp = arr[i], j;
-                for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
-                    arr[j] = arr[j - gap];
-                arr[j] = temp;
-            }
-
+        // for (int gap = n / 2; gap > 0; gap /= 2)
+        // for (int i = gap; i < n; i++) {
+        // int temp = arr[i], j;
+        // for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
+        // arr[j] = arr[j - gap];
+        // arr[j] = temp;
+        // }
     }
 
     static void printArray(int arr[]) {
