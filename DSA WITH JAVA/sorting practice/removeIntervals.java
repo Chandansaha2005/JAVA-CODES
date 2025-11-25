@@ -18,7 +18,7 @@ public class removeIntervals {
     }
 
     public static void main(String[] args) {
-        IntervalEraser eraser = new IntervalEraser();
+        removeIntervals eraser = new removeIntervals();
         int[][] intervals = { { 1, 2 }, { 2, 3 }, { 3, 4 }, { 1, 3 } };
         int result = eraser.eraseOverlapIntervals(intervals);
         eraser.display(result);
