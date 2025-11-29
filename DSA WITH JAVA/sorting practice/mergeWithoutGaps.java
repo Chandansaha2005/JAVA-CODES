@@ -1,4 +1,4 @@
-public class mergeSortedArrays {
+public class mergeWithoutGaps {
     static void mergeArrays(int[] a, int[] b) {
         int n = a.length,m = b.length,gap = (n + m + 1) / 2;
         while (gap > 0) {
