@@ -1,5 +1,8 @@
 public class maximumGap {
-    
+    static int maxGap(int[] nums) {
+
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 5, 3, 6, 9 };
         maxGap(arr);
