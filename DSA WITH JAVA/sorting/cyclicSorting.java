@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class cycleSorting {
+public class cyclicSorting {
 
     static void cycleSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -19,7 +19,6 @@ public class cycleSorting {
         int n = arr.length;
         for (int i = 0; i < n; ++i)
             System.out.print(arr[i] + " ");
-
         System.out.println();
     }
 

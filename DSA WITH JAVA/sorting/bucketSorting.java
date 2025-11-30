@@ -30,20 +30,14 @@ public class bucketSorting {
         System.out.print("Enter the number of elements = ");
         int n = sc.nextInt();
         float arr[] = new float[n];
-
         System.out.print("Enter elements (between 0 and 1) = ");
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             arr[i] = sc.nextFloat();
-        }
-
         System.out.print("Before Sorting : ");
         printArray(arr);
-
         bucketSort(arr);
-
         System.out.print("After Sorting : ");
         printArray(arr);
-
         sc.close();
     }
 }

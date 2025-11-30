@@ -1,63 +1,49 @@
-import java.util.Scanner; // Import Scanner class for user input
+import java.util.Scanner;
 
 public class optimized_bubbleSort {
 
-    // Method to print the elements of the array
     static void printArray(int[] arr, int n) {
         System.out.println("\nArray:- ");
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " "); // Print each element separated by space
+            System.out.print(arr[i] + " ");
         }
     }
 
-    // Optimized Bubble Sort method
     static void bubbleSort(int[] arr) {
-        // Outer loop for each pass through the array
         for (int i = 0; i < arr.length - 1; i++) {
-            System.out.println("\nIteration = " + (i + 1)); // Show current iteration
-            printArray(arr, arr.length); // Print array before this pass
+            System.out.println("\nIteration = " + (i + 1));
+            printArray(arr, arr.length);
 
-            boolean swapped = false; // Track if any swap happens in this pass
+            boolean swapped = false; // optimization: track if any swap happens
 
-            // Inner loop for comparing adjacent elements
             for (int j = 0; j < arr.length - i - 1; j++) {
-                // Swap if the current element is greater than the next
                 if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];       // Temporary variable to hold value
-                    arr[j] = arr[j + 1];     // Swap current with next
-                    arr[j + 1] = temp;       // Complete the swap
-                    swapped = true;          // Mark that a swap occurred
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
                 }
             }
 
-            // If no swaps occurred, array is already sorted
-            if (!swapped) {
+            if (!swapped) { // optimization: exit early if no swaps
                 System.out.println("\nNo swaps in this iteration. Array is sorted early.");
-                break; // Exit early for efficiency
+                break;
             }
         }
     }
 
-    // Main method - entry point of the program
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); // Create Scanner object for input
-
-        // Prompt user for number of elements
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter the no. of elements = ");
-        int n = sc.nextInt(); // Read number of elements
-
-        int[] arr = new int[n]; // Declare array of size n
-
-        // Prompt user to enter the elements
+        int n = sc.nextInt();
+        int[] arr = new int[n];
         System.err.print("Enter the elements = ");
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt(); // Read each element into the array
+            arr[i] = sc.nextInt();
         }
-
-        printArray(arr, n); // Print original array
-        bubbleSort(arr);        // Sort the array using optimized Bubble Sort
-        printArray(arr, n); // Print sorted array
-
-        sc.close(); // Close the Scanner to free resources
+        printArray(arr, n);
+        bubbleSort(arr);
+        printArray(arr, n);
+        sc.close();
     }
 }

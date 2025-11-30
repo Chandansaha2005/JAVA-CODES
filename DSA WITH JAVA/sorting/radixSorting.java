@@ -56,15 +56,11 @@ public class radixSorting {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-
         System.out.print("Before Sorting : ");
         printArray(arr);
-
         radixSort(arr);
-
         System.out.print("After Sorting : ");
         printArray(arr);
-
         sc.close();
     }
 }

@@ -1,15 +1,7 @@
 import java.util.Scanner;
  
 public class InsertionSorting {
-    /**
-     * The `insertionSort` function implements the insertion sort algorithm to sort
-     * an array of
-     * integers in ascending order.
-     * 
-     * @param arr The `arr` parameter in the `insertionSort` method is an integer
-     *            array that you want
-     *            to sort using the insertion sort algorithm.
-     */
+
     static void insertionSort(int arr[]) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
@@ -25,7 +17,6 @@ public class InsertionSorting {
         int n = arr.length;
         for (int i = 0; i < n; ++i)
             System.out.print(arr[i] + " ");
-
         System.out.println();
     }
 

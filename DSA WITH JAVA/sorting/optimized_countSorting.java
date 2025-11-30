@@ -38,20 +38,15 @@ public class optimized_countSorting {
         System.out.print("Enter the number of elements = ");
         int n = sc.nextInt();
         int arr[] = new int[n];
-
         System.out.print("Enter elements = ");
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-
         System.out.print("Before Sorting : ");
         printArray(arr);
-
         countSort(arr);
-
         System.out.print("After Sorting : ");
         printArray(arr);
-
         sc.close();
     }
 }
