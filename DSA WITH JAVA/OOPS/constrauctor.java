@@ -2,9 +2,13 @@ public class constrauctor {
     public static class Pokemon {
         String name;
         String type;
-        int version;
+        int version = 1;// default
 
-        Pokemon(String n, String t, int v) {
+        Pokemon() {// default constructor
+
+        }
+
+        Pokemon(String n, String t, int v) {// paramiterized constructor
             name = n;
             type = t;
             version = v;
@@ -16,7 +20,9 @@ public class constrauctor {
     }
 
     public static void main(String[] args) {
-        Pokemon pikachu = new Pokemon("pikachu", "electric", 2);
+        Pokemon pikachu = new Pokemon("Pikachu", "electric", 2);
         pikachu.getInfo();
+        Pokemon charizard = new Pokemon("fire", "Charizard", 3);
+        charizard.getInfo();
     }
 }
