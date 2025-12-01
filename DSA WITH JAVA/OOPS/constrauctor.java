@@ -3,7 +3,7 @@ public class constrauctor {
         String name;
         String type;
         int version = 1;// default
-        
+
         Pokemon() {// default constructor
 
         }
@@ -12,6 +12,7 @@ public class constrauctor {
             name = n;
             type = t;
             version = v;
+
         }
 
         void getInfo() {
