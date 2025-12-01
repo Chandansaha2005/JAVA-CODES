@@ -12,25 +12,30 @@ class ComplexNumber {
 
     void print() {
         if (y > 0)
-            System.out.print(this.x + "+" + "i" + this.y);
+            System.out.print("\n" + this.x + "+" + this.y + "i");
         else
-            System.out.print(this.x + "-" + "i" + (-this.y));
+            System.out.print("\n" + this.x + "-" + (-this.y) + "i");
     }
 
-    void add() {
-        System.out.print("\nAddition = " + (this.x + (Math.sqrt(1) * this.y)));
+    void add(ComplexNumber cn2) {
+        this.x += cn2.x;
+        this.y += cn2.y;
     }
 
-    void mul() {
-        System.out.print("Addition = " + (this.x + (Math.sqrt(1) * this.y)));
+    void mul(ComplexNumber cn2) {
+        this.x *= cn2.x;
+        this.y *= cn2.y;
     }
 }
 
 public class ComplexNumberClass {
 
     public static void main(String[] args) {
-        ComplexNumber c = new ComplexNumber(5, 2);
-        c.print();
-        c.add();
+        ComplexNumber cn1 = new ComplexNumber(5, 2);
+        ComplexNumber cn2 = new ComplexNumber(5, 2);
+        cn1.print();
+        cn2.print();
+        cn1.add(cn2);
+        cn1.print();
     }
 }
