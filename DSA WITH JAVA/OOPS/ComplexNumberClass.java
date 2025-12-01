@@ -1,10 +1,10 @@
 class ComplexNumber {
-    int x = 0, y = 0;
+    double x = 0, y = 0;
 
     ComplexNumber() {
     }
 
-    ComplexNumber(int x, int y) {
+    ComplexNumber(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -21,18 +21,26 @@ class ComplexNumber {
         this.y += z.y;
     }
 
-    void mul(ComplexNumber z) {
-        System.out.print("\n" + (x * z.x - y * z.y) + "+ " + (x * z.y + z.x * y) + "i");
+    void sub(ComplexNumber z) {
+        this.x -= z.x;
+        this.y -= z.y;
     }
+
+    void mul(ComplexNumber z) {
+        x = x * z.x - y * z.y;
+        y = x * z.y + z.x * y;
+    }
+
 }
 
 public class ComplexNumberClass {
 
     public static void main(String[] args) {
         ComplexNumber cn1 = new ComplexNumber(5, 2);
-        ComplexNumber cn2 = new ComplexNumber(5, 2);
+        ComplexNumber cn2 = new ComplexNumber(5, (-2));
         cn1.print();
         cn2.print();
         cn1.mul(cn2);
+        cn1.print();
     }
 }
