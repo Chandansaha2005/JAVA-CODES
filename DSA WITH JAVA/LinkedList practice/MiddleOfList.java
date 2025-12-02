@@ -1,12 +1,10 @@
-public class SlowFastMiddleOfList {
+public class MiddleOfList{
     public static ListNode middleNode(ListNode head) {
-        ListNode s = head;
-        ListNode f = head;
-        while (f != null && f.next != null) {
-            s = s.next;
-            f = f.next.next;
-        }
-        return s;
+        int size = 0;
+        for (ListNode temp = head; temp != null; temp = temp.next) size++;
+        ListNode temp = head;
+        for (int i = 0; i < size / 2; i++) temp = temp.next;
+        return temp;
     }
 
     public static void printList(ListNode head) {

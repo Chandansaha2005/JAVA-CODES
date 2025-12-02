@@ -1,10 +1,12 @@
-public class MiddleNodeofLinkedList{
+public class MiddleOfListOptimized {
     public static ListNode middleNode(ListNode head) {
-        int size = 0;
-        for (ListNode temp = head; temp != null; temp = temp.next) size++;
-        ListNode temp = head;
-        for (int i = 0; i < size / 2; i++) temp = temp.next;
-        return temp;
+        ListNode s = head;
+        ListNode f = head;
+        while (f != null && f.next != null) {
+            s = s.next;
+            f = f.next.next;
+        }
+        return s;
     }
 
     public static void printList(ListNode head) {
