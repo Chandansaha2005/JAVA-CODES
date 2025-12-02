@@ -8,7 +8,8 @@ class ListNode {
 }
 
 public class DeleteAnodeInLinkedList {
-    public static void deleteNode(ListNode node) {// Problem function
+    // Problem function
+    public static void deleteNode(ListNode node) {
         node.val = node.next.val;
         node.next = node.next.next;
     }
