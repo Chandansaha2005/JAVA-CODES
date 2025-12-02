@@ -24,6 +24,13 @@ public class DisplayList {
         Rprint(temp.next);
     }
 
+    private static int get(Node head, int key) {
+        Node temp;
+        for (temp = head; temp != null && key > 0; key--)
+            temp = temp.next;
+        return temp.data;
+    }
+
     public static void main(String[] args) {
         Node a = new Node(10);
         Node b = new Node(20);
@@ -35,5 +42,7 @@ public class DisplayList {
         c.next = d;
         d.next = e;
         print(a);
+        System.out.println();
+        System.out.print(get(a, 0));
     }
 }
