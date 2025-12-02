@@ -7,7 +7,7 @@ class ListNode {
     }
 }
 
-public class DeleteAnodeInLinkedList {
+public class DeleteNodeInLinkedList {
     // Problem function
     public static void deleteNode(ListNode node) {
         node.val = node.next.val;
