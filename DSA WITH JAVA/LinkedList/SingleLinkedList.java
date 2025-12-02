@@ -22,12 +22,22 @@ class LinkedList {
         }
     }
 
-    void displayList() {
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + " -> ");
-            temp = temp.next;
+    void addAtAny(int data, int pos) {
+        Node newNode = new Node(data);
+        if (pos == 1 || head == null)
+            addAtHead(data);
+        else {
+            Node temp = head;
+            for (int i = 1; i < pos - 1; i++)
+                temp = temp.next;
+            newNode.next = temp.next;
+            temp.next = newNode;
         }
+    }
+
+    void displayList() {
+        for (Node temp = head; temp != null; temp = temp.next)
+            System.out.print(temp.data + " -> ");
         System.out.println("null");
     }
 }
@@ -40,6 +50,10 @@ public class SingleLinkedList {
         ll.addAtTail(20);
         ll.displayList();
         ll.addAtHead(30);
+        ll.displayList();
+        ll.addAtAny(50, 2);
+        ll.displayList();
+        ll.addAtAny(40, 1);
         ll.displayList();
     }
 }
