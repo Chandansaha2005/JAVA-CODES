@@ -61,18 +61,23 @@ class LinkedList {
             head = head.next;
         if (head == null)
             tail = null;
+        size--;
     }
 
     void deleteFromAny(int pos) {
         if (pos > size || pos < 1)
-            System.out.println("WRONG POSITION\nEnter position between (1 to" + size + ")");
-        if (pos == 1 || head == null)
+            System.out.println("WRONG POSITION\nEnter Position Between (1 to" + size + ")");
+        else if (pos == 1 || head == null)
             deleteFromHead();
         else {
             Node temp = head;
             for (int i = 1; i < pos - 1; i++)
                 temp = temp.next;
-            temp.next = temp.next.next;
+            Node toDelete = temp.next;
+            temp.next = toDelete.next;
+            if (toDelete == tail)
+                tail = temp;
+            size--;
         }
     }
 
@@ -115,16 +120,14 @@ public class SingleLinkedList {
         ll.displayList();
         ll.addAtAny(50, 2);
         ll.displayList();
+
+        ll.deleteFromTail();
+        ll.displayList();
+        ll.deleteFromHead();
+        ll.displayList();
+        ll.deleteFromAny(2);
+        ll.displayList();
         System.out.println(ll.size);
-        System.out.println((ll.search(30)));
-        System.out.println(ll.get(2));
-        // ll.deleteFromTail();
-        // ll.displayList();
-        // ll.deleteFromHead();
-        // ll.displayList();
-        // ll.deleteFromAny(2);
-        // ll.displayList();
-        // System.out.println(ll.size);
 
     }
 }
