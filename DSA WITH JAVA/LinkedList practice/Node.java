@@ -1,16 +1,16 @@
 public class Node {
-    int val;
+    int data;
     Node next;
 
     Node() {
     }
 
-    Node(int val) {
-        this.val = val;
+    Node(int data) {
+        this.data = data;
     }
 
-    Node(int val, Node next) {
-        this.val = val;
+    Node(int data, Node next) {
+        this.data = data;
         this.next = next;
     }
 }
