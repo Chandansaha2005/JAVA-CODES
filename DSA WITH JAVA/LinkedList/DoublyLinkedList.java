@@ -47,6 +47,7 @@ class DLinkedList {
             tail.next = null;
         }
     }
+    
     void deleteFromHead() {
         if (head == null)
             System.out.println("Empty List");
