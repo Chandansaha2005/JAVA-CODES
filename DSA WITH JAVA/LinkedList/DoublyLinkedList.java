@@ -126,13 +126,14 @@ class DLinkedList {
 
     void displayList() {
         for (Dnode temp = head; temp != null; temp = temp.next)
-            System.out.print(temp.data + " ");
-        System.out.println();
+            System.out.print(temp.data + " -> ");
+        System.out.print("null\n");
     }
 
     void displayListRev() {
+        System.out.print("null");
         for (Dnode temp = tail; temp != null; temp = temp.prev)
-            System.out.print(temp.data + " ");
+            System.out.print(" <- " + temp.data);
         System.out.println();
     }
 
@@ -149,8 +150,9 @@ public class DoublyLinkedList {
         dlist.displayList();
         dlist.addAtHead(50);
         dlist.displayList();
-        dlist.addAtAny(60, 2);
+        dlist.addAtAny(60, 5);
         dlist.displayList();
+        dlist.displayListRev();
         dlist.deleteFromAny(6);
         dlist.displayList();
         System.out.println(dlist.get(2));
