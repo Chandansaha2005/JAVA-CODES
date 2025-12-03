@@ -102,6 +102,28 @@ class DLinkedList {
         }
     }
 
+    int search(int data) {
+        int i = 1;
+        for (Dnode temp = head; temp != null; temp = temp.next, ++i)
+            if (temp.data == data)
+                return i;
+        return 0;
+    }
+
+    int get(int pos) {
+        if (pos == 1)
+            return head.data;
+        if (pos == size)
+            return tail.data;
+        int i = 1;
+        for (Dnode temp = head; temp != null; temp = temp.next, ++i)
+            if (pos == i) {
+                i = temp.data;
+                break;
+            }
+        return i;
+    }
+
     void displayList() {
         for (Dnode temp = head; temp != null; temp = temp.next)
             System.out.print(temp.data + " ");
@@ -131,6 +153,7 @@ public class DoublyLinkedList {
         dlist.displayList();
         dlist.deleteFromAny(6);
         dlist.displayList();
+        System.out.println(dlist.get(2));
         // dlist.deleteFromTail();
         // dlist.displayList();
         // dlist.deleteFromTail();
