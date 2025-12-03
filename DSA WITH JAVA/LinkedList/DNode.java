@@ -1,11 +1,8 @@
-public class DNode {
+class Dnode {
     int data;
-    DNode next;
-    DNode prev;
-    int size;
+    Dnode next, prev;
 
-    DNode(int data) {
+    Dnode(int data) {
         this.data = data;
     }
-
 }
