@@ -27,7 +27,11 @@ class LinkedList {
 
     void addAtAny(int data, int pos) {
         Node newNode = new Node(data);
-        if (pos == 1 || head == null)
+        if (pos > size + 1 || pos < 1)
+            System.out.println("WRONG POSITION\nEnter Position Between (1 to " + (size + 1) + ")");
+        else if (pos == size + 1)
+            addAtTail(data);
+        else if (pos == 1 || head == null)
             addAtHead(data);
         else {
             Node temp = head;
@@ -66,7 +70,7 @@ class LinkedList {
 
     void deleteFromAny(int pos) {
         if (pos > size || pos < 1)
-            System.out.println("WRONG POSITION\nEnter Position Between (1 to" + size + ")");
+            System.out.println("WRONG POSITION\nEnter Position Between (1 to " + size + ")");
         else if (pos == 1 || head == null)
             deleteFromHead();
         else {
@@ -111,7 +115,7 @@ class LinkedList {
 }
 
 public class SingleLinkedList {
-    
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         System.out.println(ll.size);
@@ -119,7 +123,7 @@ public class SingleLinkedList {
         ll.displayList();
         ll.addAtHead(30);
         ll.displayList();
-        ll.addAtAny(50, 2);
+        ll.addAtAny(50, 20);
         ll.displayList();
 
         ll.deleteFromTail();

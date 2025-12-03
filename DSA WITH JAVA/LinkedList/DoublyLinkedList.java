@@ -24,6 +24,7 @@ class DLinkedList {
             newNode.prev = tail;
             tail = newNode;
         }
+        size++;
     }
 
     void addAtHead(int data) {
@@ -35,35 +36,63 @@ class DLinkedList {
             newNode.next = head;
             head = newNode;
         }
+        size++;
+    }
+
+    void addAtAny(int data, int pos) {
+        if (pos > size + 1 || pos < 1)
+            System.out.println("WRONG POSITION\nEnter Position Between (1 to " + (size + 1) + ")");
+        else if (pos == size + 1)
+            addAtTail(data);
+        else if (pos == 1)
+            addAtHead(data);
+        else {
+            Dnode newNode = new Dnode(data);
+            Dnode temp = head;
+            for (int i = 2; i < pos; i++) {
+                temp = temp.next;
+            }
+            newNode.next = temp.next;
+            newNode.prev = temp;
+            temp.next = newNode;
+            newNode.next.prev = newNode;
+            size++;
+        }
     }
 
     void deleteFromTail() {
         if (tail == null)
             System.out.println("Empty List");
-        else if (tail == head)
+        else if (tail == head) {
             head = tail = null;
-        else {
+            size--;
+        } else {
             tail = tail.prev;
             tail.next = null;
+            size--;
         }
     }
 
     void deleteFromHead() {
         if (head == null)
             System.out.println("Empty List");
-        else if (tail == head)
+        else if (tail == head) {
             head = tail = null;
-        else {
+            size--;
+        } else {
             head = head.next;
             head.prev = null;
+            size--;
         }
     }
+    
 
     void displayList() {
         for (Dnode temp = head; temp != null; temp = temp.next)
             System.out.print(temp.data + " ");
         System.out.println();
     }
+
     void displayListRev() {
         for (Dnode temp = tail; temp != null; temp = temp.prev)
             System.out.print(temp.data + " ");
@@ -83,13 +112,15 @@ public class DoublyLinkedList {
         dlist.displayList();
         dlist.addAtHead(50);
         dlist.displayList();
-        dlist.deleteFromTail();
+        dlist.addAtAny(60, 6);
         dlist.displayList();
-        dlist.deleteFromTail();
-        dlist.displayList();
-        dlist.deleteFromHead();
-        dlist.displayList();
-        dlist.deleteFromHead();
-        dlist.displayList();
+        // dlist.deleteFromTail();
+        // dlist.displayList();
+        // dlist.deleteFromTail();
+        // dlist.displayList();
+        // dlist.deleteFromHead();
+        // dlist.displayList();
+        // dlist.deleteFromHead();
+        // dlist.displayList();
     }
 }
