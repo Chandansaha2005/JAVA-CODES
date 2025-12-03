@@ -3,18 +3,16 @@ public class DeleteKthElementFromLast {
         ListNode slow = head;
         ListNode fast = head;
         ListNode prev = null;
-
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i < n; i++)
             fast = fast.next;
-        }
+        if (fast == null)
+            return head.next;
         while (fast != null) {
             prev = slow;
             slow = slow.next;
             fast = fast.next;
         }
-        if (slow.next == null)
-            slow = prev;
-        slow.next = slow.next.next;
+        prev.next = slow.next;
         return head;
     }
 
