@@ -25,7 +25,7 @@ class DLinkedList {
             tail = newNode;
         }
     }
-    
+
     void addAtHead(int data) {
         Dnode newNode = new Dnode(data);
         if (head == null)
@@ -47,7 +47,6 @@ class DLinkedList {
             tail.next = null;
         }
     }
-
     void deleteFromHead() {
         if (head == null)
             System.out.println("Empty List");
