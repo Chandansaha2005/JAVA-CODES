@@ -1,6 +1,22 @@
 public class IntersectionOfTwoLinkedList {
     public static Node intersectPoint(Node head1, Node head2) {
-        
+        int h1 = 0, h2 = 0;
+        for (Node temp = head1; temp != null; temp = temp.next)
+            h1++;
+        for (Node temp = head2; temp != null; temp = temp.next)
+            h2++;
+        Node start1 = head1;
+        Node start2 = head2;
+        if (h1 > h2) {
+            for (int i = 0; i < h1 - h2; i++)
+                start1 = start1.next;
+        } else if (h1 < h2) {
+            for (int i = 0; i < h2 - h1; i++)
+                start2 = start2.next;
+        }
+        for (; start1 != null; start1 = start1.next, start2 = start2.next) {
+
+        }
         return null;
     }
 
@@ -14,15 +30,18 @@ public class IntersectionOfTwoLinkedList {
     }
 
     public static void main(String[] args) {
-        Node head1 = new Node(1);
-        head1.next = new Node(2);
-        head1.next.next = new Node(3);
-        head1.next.next.next = new Node(4);
-        head1.next.next.next.next = new Node(5);
+        Node common = new Node(15);
+        common.next = new Node(30);
 
-        Node head2 = new Node(9);
-        head2.next = new Node(10);
-        head2.next.next = head1.next.next; // creating an intersection at node with value 3
+        // First list: 10 -> 15 -> 30
+        Node head1 = new Node(10);
+        head1.next = common;
+
+        // Second list: 3 -> 6 -> 9 -> 15 -> 30
+        Node head2 = new Node(3);
+        head2.next = new Node(6);
+        head2.next.next = new Node(9);
+        head2.next.next.next = common; // creating an intersection at node with value 3
 
         System.out.println("List 1:");
         printList(head1);
