@@ -154,13 +154,13 @@ public class DoublyLinkedList {
         dlist.deleteFromAny(6);
         dlist.displayList();
         System.out.println(dlist.get(2));
-        // dlist.deleteFromTail();
-        // dlist.displayList();
-        // dlist.deleteFromTail();
-        // dlist.displayList();
-        // dlist.deleteFromHead();
-        // dlist.displayList();
-        // dlist.deleteFromHead();
-        // dlist.displayList();
+        dlist.deleteFromTail();
+        dlist.displayList();
+        dlist.deleteFromTail();
+        dlist.displayList();
+        dlist.deleteFromHead();
+        dlist.displayList();
+        dlist.deleteFromHead();
+        dlist.displayList();
     }
 }
