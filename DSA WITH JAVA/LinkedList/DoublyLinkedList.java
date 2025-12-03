@@ -47,7 +47,7 @@ class DLinkedList {
             tail.next = null;
         }
     }
-    
+
     void deleteFromHead() {
         if (head == null)
             System.out.println("Empty List");
@@ -64,7 +64,6 @@ class DLinkedList {
             System.out.print(temp.data + " ");
         System.out.println();
     }
-
     void displayListRev() {
         for (Dnode temp = tail; temp != null; temp = temp.prev)
             System.out.print(temp.data + " ");
