@@ -25,7 +25,6 @@ class DLinkedList {
             tail = newNode;
         }
     }
-
     void addAtHead(int data) {
         Dnode newNode = new Dnode(data);
         if (head == null)
