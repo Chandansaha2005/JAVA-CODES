@@ -85,7 +85,22 @@ class DLinkedList {
             size--;
         }
     }
-    
+
+    void deleteFromAny(int pos) {
+        if (pos > size || pos < 1)
+            System.out.println("WRONG POSITION\nEnter Position Between (1 to " + size + ")");
+        else if (pos == size)
+            deleteFromTail();
+        else if (pos == 1)
+            deleteFromHead();
+        else {
+            Dnode temp = head;
+            for (int i = 2; i < pos; i++)
+                temp = temp.next;
+            temp.next = temp.next.next;
+            temp.next.next.prev = temp;
+        }
+    }
 
     void displayList() {
         for (Dnode temp = head; temp != null; temp = temp.next)
@@ -112,7 +127,9 @@ public class DoublyLinkedList {
         dlist.displayList();
         dlist.addAtHead(50);
         dlist.displayList();
-        dlist.addAtAny(60, 6);
+        dlist.addAtAny(60, 2);
+        dlist.displayList();
+        dlist.deleteFromAny(6);
         dlist.displayList();
         // dlist.deleteFromTail();
         // dlist.displayList();
