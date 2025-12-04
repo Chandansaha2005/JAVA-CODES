@@ -4,7 +4,6 @@ class CDLinkedList {
     int size;
 
     void addAtTail(int data) {
-        
         Dnode newNode = new Dnode(data);
         if (tail == null)
             head = tail = newNode;
