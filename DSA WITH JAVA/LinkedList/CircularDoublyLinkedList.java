@@ -44,7 +44,6 @@ class CDLinkedList {
         }
         size--;
     }
-
     void deleteFromHead() {
         if (head == null) {
             System.out.println("Empty List");
