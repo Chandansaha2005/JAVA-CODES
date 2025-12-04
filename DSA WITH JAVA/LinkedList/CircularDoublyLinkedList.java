@@ -5,9 +5,9 @@ class CDLinkedList {
 
     void addAtTail(int data) {
         Dnode newNode = new Dnode(data);
-        if (tail == null) {
+        if (tail == null)
             head = tail = newNode;
-        } else {
+        else {
             tail.next = newNode;
             newNode.prev = tail;
             tail = newNode;
@@ -19,9 +19,9 @@ class CDLinkedList {
 
     void addAtHead(int data) {
         Dnode newNode = new Dnode(data);
-        if (head == null) {
+        if (head == null)
             head = tail = newNode;
-        } else {
+        else {
             newNode.next = head;
             head.prev = newNode;
             head = newNode;
@@ -30,6 +30,7 @@ class CDLinkedList {
         head.prev = tail;
         size++;
     }
+
 
     void deleteFromTail() {
         if (tail == null) {
@@ -44,6 +45,7 @@ class CDLinkedList {
         }
         size--;
     }
+
     void deleteFromHead() {
         if (head == null) {
             System.out.println("Empty List");
