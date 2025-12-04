@@ -17,7 +17,6 @@ public class DetectCycleInLinkedListII {
         }
         return start;
     }
-
     public static void main(String[] args) {
         // Create a linked list: 3 -> 2 -> 0 -> -4
         ListNode head = new ListNode(3);
