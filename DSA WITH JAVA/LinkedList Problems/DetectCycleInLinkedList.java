@@ -1,4 +1,4 @@
-public class DetectLinkedListCycle {
+public class DetectCycleInLinkedList {
     public static boolean hasCycle(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
