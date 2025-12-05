@@ -1,7 +1,5 @@
-import java.util.Arrays;
-
 public class heapSorting {
-    
+
     static void heapify(int[] arr, int index, int n) {
         int largest = index;
         int left = 2 * index + 1;
@@ -38,7 +36,7 @@ public class heapSorting {
 
     public static void main(String[] args) {
         int[] arr = { 9, 4, 3, 8, 10, 2, 5 };
-        heapSort(arr);
+        heapSort(arr, arr.length);
         for (int i = 0; i < arr.length; ++i)
             System.out.print(arr[i] + " ");
     }
