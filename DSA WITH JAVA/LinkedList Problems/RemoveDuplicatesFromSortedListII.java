@@ -1,22 +1,17 @@
 public class RemoveDuplicatesFromSortedListII {
     public static ListNode deleteDuplicates(ListNode head) {
-        ListNode temp = new ListNode(0);
-        temp.next = head;
-        ListNode i = head, j = head, p = temp;
+        ListNode temp = new ListNode(0, head);
+        ListNode p = temp, i = head;
         while (i != null) {
-            if (i.next != null && i.val != i.next.val) {
-                p.next = i;
-                p = i;
-                i = i.next;
-            } else {
-                j = i.next;
-                while (j != null && j.val == i.val) {
-                    j = j.next;
-                }
-                i = j;
-            }
+            boolean duplicate = false;
+            for (; i.next != null && i.val == i.next.val; i = i.next)
+                duplicate = true;
+            if (duplicate)
+                p.next = i.next;
+            else
+                p = p.next;
+            i = i.next;
         }
-        p.next = i;
         return temp.next;
     }
 
