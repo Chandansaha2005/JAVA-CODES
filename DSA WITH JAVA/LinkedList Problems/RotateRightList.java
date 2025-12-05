@@ -1,4 +1,4 @@
-public class RotateList {
+public class RotateRightList {
     public static int len(ListNode head) {
         int l = 0;
         for (ListNode temp = head; temp != null; temp = temp.next)
