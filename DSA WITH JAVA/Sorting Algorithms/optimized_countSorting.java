@@ -11,13 +11,12 @@ public class optimized_countSorting {
     }
 
     static void countSort(int arr[]) {
-        int max = findMax(arr);
-        int[] count = new int[max + 1];
+        int[] count = new int[findMax(arr) + 1];
+        int[] res = new int[arr.length];
         for (int i = 0; i < arr.length; i++)
             count[arr[i]]++;
         for (int i = 1; i < count.length; i++)
             count[i] += count[i - 1];
-        int[] res = new int[arr.length];
         for (int i = arr.length - 1; i >= 0; i--) {
             res[count[arr[i]] - 1] = arr[i];
             count[arr[i]]--;
@@ -27,9 +26,8 @@ public class optimized_countSorting {
     }
 
     static void printArray(int arr[]) {
-        for (int num : arr) {
+        for (int num : arr)
             System.out.print(num + " ");
-        }
         System.out.println();
     }
 
