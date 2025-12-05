@@ -3,16 +3,14 @@ public class RemoveDuplicatesFromSortedList {
     public static Node removeDuplicates(Node head) {
         Node i = head;
         Node j = head;
-        while(j!=null){
-            j=j.next;
-            if(j.data==i.data){
-                i.next=j.next;
-            }
-            else{
-                i=j;
-            }
+        while (i != null && i.next != null) {
+            j = j.next;
+            if (j.data == i.data)
+                i.next = j.next;
+            else
+                i = j;
         }
-        return head; 
+        return head;
     }
 
     public static void printList(Node head) {
