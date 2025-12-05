@@ -1,11 +1,9 @@
 public class RotateLeftList {
     public static int len(Node head) {
         int l = 0;
-        for (Node temp = head; temp != null; temp = temp.next)
-            l++;
+        for (Node temp = head; temp != null; temp = temp.next) l++;
         return l;
     }
-
     public static Node rotate(Node head, int k) {
         if (head == null || head.next == null || k == 0) return head;
         int n = len(head);
