@@ -1,10 +1,10 @@
 public class PartitionLinkedList {
-    public static ListNode partition(ListNode head, int x) {
-        ListNode temp = new ListNode(0);
-        ListNode temp2 = new ListNode(0);
-        ListNode i = head, k = temp ,j=temp2;
+    public static Node partition(Node head, int x) {
+        Node temp = new Node(0);
+        Node temp2 = new Node(0);
+        Node i = head, k = temp ,j=temp2;
         while (i != null) {
-            if (i.val < x) {
+            if (i.data < x) {
                 k.next = i;
                 i = i.next;
                 k = k.next;
@@ -19,27 +19,27 @@ public class PartitionLinkedList {
         return temp.next;
     }
 
-    public static void printList(ListNode head) {
-        ListNode curr = head;
+    public static void printList(Node head) {
+        Node curr = head;
         while (curr != null) {
-            System.out.print(curr.val + " ");
+            System.out.print(curr.data + " ");
             curr = curr.next;
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(4);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(2);
-        head.next.next.next.next = new ListNode(5);
-        head.next.next.next.next.next = new ListNode(2);
+        Node head = new Node(1);
+        head.next = new Node(4);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(2);
+        head.next.next.next.next = new Node(5);
+        head.next.next.next.next.next = new Node(2);
 
         System.out.println("Original list:");
         printList(head);
 
-        ListNode result = partition(head, 3);
+        Node result = partition(head, 3);
 
         System.out.println("List after partition call:");
         printList(result);
