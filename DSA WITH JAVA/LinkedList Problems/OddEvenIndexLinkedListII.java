@@ -3,8 +3,9 @@ public class OddEvenIndexLinkedListII {
         ListNode o = new ListNode(0);
         ListNode e = new ListNode(0);
         ListNode i = head, odd = o, even = e;
+        int idx = 0;
         while (i != null) {
-            if (i.val % 2 == 0) {
+            if (idx % 2 == 0) {
                 even.next = i;
                 i = i.next;
                 even = even.next;
@@ -13,10 +14,11 @@ public class OddEvenIndexLinkedListII {
                 i = i.next;
                 odd = odd.next;
             }
+            idx++;
         }
-        even.next = null;
-        odd.next = e.next;
-        return o.next;
+        odd.next = null;
+        even.next = o.next;
+        return e.next;
     }
 
     public static void printList(ListNode head) {
