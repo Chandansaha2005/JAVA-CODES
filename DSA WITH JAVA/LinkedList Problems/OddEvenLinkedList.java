@@ -39,7 +39,6 @@ public class OddEvenLinkedList {
         printList(head);
 
         Node result = oddEvenList(head);
-
         System.out.println("List after oddEvenList call:");
         printList(result);
     }
