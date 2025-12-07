@@ -1,13 +1,11 @@
 public class PairwiseSwapLinkedList {
-    public static Node pairwiseSwap(Node head) {
+    public static ListNode pairwiseSwap(ListNode head) {
         if (head == null || head.next == null)
             return head;
-
-        Node oddDummy = new Node(0), evenDummy = new Node(0);
-        Node odd = oddDummy, even = evenDummy;
-        Node curr = head;
+        ListNode oddList = new ListNode(0), evenList = new ListNode(0);
+        ListNode odd = oddList, even = evenList;
+        ListNode curr = head;
         int idx = 1;
-
         while (curr != null) {
             if (idx % 2 != 0) {
                 odd.next = curr;
@@ -21,11 +19,9 @@ public class PairwiseSwapLinkedList {
         }
         odd.next = null;
         even.next = null;
-
-        Node resDummy = new Node(0);
-        Node tail = resDummy;
-        Node o = oddDummy.next, e = evenDummy.next;
-
+        ListNode res = new ListNode(0);
+        ListNode tail = res;
+        ListNode o = oddList.next, e = evenList.next;
         while (o != null || e != null) {
             if (e != null) {
                 tail.next = e;
@@ -39,29 +35,29 @@ public class PairwiseSwapLinkedList {
             }
         }
         tail.next = null;
-        return resDummy.next;
+        return res.next;
     }
 
-    public static void printList(Node head) {
-        Node curr = head;
+    public static void printList(ListNode head) {
+        ListNode curr = head;
         while (curr != null) {
-            System.out.print(curr.data + " ");
+            System.out.print(curr.val + " ");
             curr = curr.next;
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
 
         System.out.println("Original list:");
         printList(head);
 
-        Node result = pairwiseSwap(head);
+        ListNode result = pairwiseSwap(head);
 
         System.out.println("List after pairwiseSwap call:");
         printList(result);
