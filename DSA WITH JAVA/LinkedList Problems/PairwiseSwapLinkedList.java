@@ -8,7 +8,6 @@ public class PairwiseSwapLinkedList {
         Node curr = head;
         int idx = 1;
 
-        // Step 1: Split into odd and even lists
         while (curr != null) {
             if (idx % 2 != 0) {
                 odd.next = curr;
@@ -23,7 +22,6 @@ public class PairwiseSwapLinkedList {
         odd.next = null;
         even.next = null;
 
-        // Step 2: Criss-cross merge
         Node resDummy = new Node(0);
         Node tail = resDummy;
         Node o = oddDummy.next, e = evenDummy.next;
@@ -41,7 +39,6 @@ public class PairwiseSwapLinkedList {
             }
         }
         tail.next = null;
-
         return resDummy.next;
     }
 
