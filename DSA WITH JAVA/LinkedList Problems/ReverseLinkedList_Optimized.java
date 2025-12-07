@@ -1,14 +1,12 @@
-import java.util.ArrayList;
-
 public class ReverseLinkedList_Optimized {
 
     public static Node reverseList(Node head) {
         Node p = null, c = head, f = head;
-        while(f!=null){
-            f=c.next;
-            c.next=p;
-            p=c;
-            c=f;
+        while (f != null) {
+            f = c.next;
+            c.next = p;
+            p = c;
+            c = f;
         }
         return p;
     }
