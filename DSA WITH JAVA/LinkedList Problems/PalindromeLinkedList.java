@@ -1,41 +1,38 @@
 public class PalindromeLinkedList {
-    public static boolean isPalindrome(Node head) {
-        boolean flag = false;
-        Node rev = new Node(0);
-        Node p = null, c = head, f = head;
+    public static boolean isPalindrome(ListNode head) {
+        ListNode rev = new ListNode(0);
+        ListNode c = head, f = head;
         while (f != null) {
             f = c.next;
-            Node n = new Node(c.data);
+            ListNode n = new ListNode(c.val);
             n.next = rev;
             rev = n;
             c = f;
         }
-        Node i = rev, j = head;
+        ListNode i = rev, j = head;
         while (i.next != null && j != null) {
-            if (i.data == j.data)
-                flag = true;
-            else
-                flag = false;
+            if (i.val != j.val)
+                return false;
             i = i.next;
             j = j.next;
         }
-        return flag;
+        return true;
     }
 
-    public static void printList(Node head) {
-        Node curr = head;
+    public static void printList(ListNode head) {
+        ListNode curr = head;
         while (curr != null) {
-            System.out.print(curr.data + " ");
+            System.out.print(curr.val + " ");
             curr = curr.next;
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(2);
-        head.next.next.next = new Node(1);
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(2);
+        head.next.next.next = new ListNode(1);
 
         System.out.println("Original list:");
         printList(head);
