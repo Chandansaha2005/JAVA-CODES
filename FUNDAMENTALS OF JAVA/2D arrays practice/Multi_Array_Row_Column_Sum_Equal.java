@@ -26,7 +26,7 @@ public class Multi_Array_Row_Column_Sum_Equal {
         }
         return res;
     }
-    
+
     static void print2dArray(int arr[][]) {
         System.out.println("\nMatrix:- ");
         for (int i = 0; i < arr.length; i++) {
@@ -53,6 +53,6 @@ public class Multi_Array_Row_Column_Sum_Equal {
         }
         print2dArray(arr);
         System.out.println(balenceSum(arr));
-        ;
+        sc.close();
     }
 }

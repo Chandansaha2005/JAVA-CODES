@@ -1,7 +1,8 @@
 public class ReverseLinkedList_Recursive {
 
     public static Node reverseList(Node head) {
-        if(head.next==null)return head;
+        if (head == null || head.next == null)
+            return head;
         Node a = head.next;
         head.next = null;
         Node b = reverseList(a);
