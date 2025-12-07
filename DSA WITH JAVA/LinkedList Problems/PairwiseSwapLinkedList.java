@@ -1,6 +1,48 @@
 public class PairwiseSwapLinkedList {
     public static Node pairwiseSwap(Node head) {
-        return head;
+        if (head == null || head.next == null)
+            return head;
+
+        Node oddDummy = new Node(0), evenDummy = new Node(0);
+        Node odd = oddDummy, even = evenDummy;
+        Node curr = head;
+        int idx = 1;
+
+        // Step 1: Split into odd and even lists
+        while (curr != null) {
+            if (idx % 2 != 0) {
+                odd.next = curr;
+                odd = odd.next;
+            } else {
+                even.next = curr;
+                even = even.next;
+            }
+            curr = curr.next;
+            idx++;
+        }
+        odd.next = null;
+        even.next = null;
+
+        // Step 2: Criss-cross merge
+        Node resDummy = new Node(0);
+        Node tail = resDummy;
+        Node o = oddDummy.next, e = evenDummy.next;
+
+        while (o != null || e != null) {
+            if (e != null) {
+                tail.next = e;
+                tail = tail.next;
+                e = e.next;
+            }
+            if (o != null) {
+                tail.next = o;
+                tail = tail.next;
+                o = o.next;
+            }
+        }
+        tail.next = null;
+
+        return resDummy.next;
     }
 
     public static void printList(Node head) {
@@ -28,4 +70,3 @@ public class PairwiseSwapLinkedList {
         printList(result);
     }
 }
-
