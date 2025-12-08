@@ -1,19 +1,19 @@
 public class MergeKSortedLists {
 
-    public static ListNode mergeKLists(ListNode[] lists) {
+    public static Node mergeKLists(Node[] lists) {
         if (lists == null || lists.length == 0)
             return null;
-        ListNode head = null;
+        Node head = null;
         for (int i = 0; i < lists.length; i++)
             head = mergeTwoLists(head, lists[i]);
         return head;
     }
 
-    public static ListNode mergeTwoLists(ListNode head1, ListNode head2) {
-        ListNode temp = new ListNode(-1);
-        ListNode tail = temp;
+    public static Node mergeTwoLists(Node head1, Node head2) {
+        Node temp = new Node(-1);
+        Node tail = temp;
         while (head1 != null && head2 != null) {
-            if (head1.val <= head2.val) {
+            if (head1.data <= head2.data) {
                 tail.next = head1;
                 head1 = head1.next;
             } else {
@@ -26,10 +26,10 @@ public class MergeKSortedLists {
         return temp.next;
     }
 
-    public static void printList(ListNode head) {
-        ListNode curr = head;
+    public static void printList(Node head) {
+        Node curr = head;
         while (curr != null) {
-            System.out.print(curr.val + " ");
+            System.out.print(curr.data + " ");
             curr = curr.next;
         }
         System.out.println();
@@ -37,37 +37,37 @@ public class MergeKSortedLists {
 
     public static void main(String[] args) {
         // Example: three sorted linked lists
-        ListNode head1 = new ListNode(1, new ListNode(4, new ListNode(5)));
-        ListNode head2 = new ListNode(1, new ListNode(3, new ListNode(4)));
-        ListNode l3 = new ListNode(2, new ListNode(6));
+        Node head1 = new Node(1, new Node(4, new Node(5)));
+        Node head2 = new Node(1, new Node(3, new Node(4)));
+        Node l3 = new Node(2, new Node(6));
 
-        ListNode[] lists = { head1, head2, l3 };
+        Node[] lists = { head1, head2, l3 };
 
         System.out.println("Original lists:");
         printList(head1);
         printList(head2);
         printList(l3);
 
-        ListNode head = mergeKLists(lists);
+        Node head = mergeKLists(lists);
 
         System.out.println("Merged list:");
         printList(head);
     }
 }
 
-class ListNode {
-    int val;
-    ListNode next;
+class Node {
+    int data;
+    Node next;
 
-    ListNode() {
+    Node() {
     }
 
-    ListNode(int val) {
-        this.val = val;
+    Node(int data) {
+        this.data = data;
     }
 
-    ListNode(int val, ListNode next) {
-        this.val = val;
+    Node(int data, Node next) {
+        this.data = data;
         this.next = next;
     }
 }
