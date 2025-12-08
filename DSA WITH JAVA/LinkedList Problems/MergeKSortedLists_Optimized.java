@@ -1,35 +1,63 @@
+import java.util.ArrayList;
+import java.util.*;
+
 public class MergeKSortedLists_Optimized {
 
-    public static Node mergeKLists(Node[] lists) {
+    public static ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0)
             return null;
-        Node head = null;
-        for (int i = 0; i < lists.length; i++)
-            head = mergeTwoLists(head, lists[i]);
-        return head;
+        ArrayList<ListNode> arr1 = new ArrayList<>();
+        ArrayList<ListNode> arr2 = new ArrayList<>();
+        for (ListNode l : lists)
+            arr1.add(l);
+        while (arr1.size() + arr2.size() > 1) {
+            // arr1 → arr2
+            while (!arr1.isEmpty()) {
+                if (arr1.size() == 1) {
+                    arr2.add(arr1.get(0));
+                    arr1.clear();
+                    break;
+                }
+                ListNode a = arr1.remove(arr1.size() - 1);
+                ListNode b = arr1.remove(arr1.size() - 1);
+                arr2.add(mergeTwoLists(a, b));
+            }
+            // arr2 → arr1
+            while (!arr2.isEmpty()) {
+                if (arr2.size() == 1) {
+                    arr1.add(arr2.get(0));
+                    arr2.clear();
+                    break;
+                }
+                ListNode a = arr2.remove(arr2.size() - 1);
+                ListNode b = arr2.remove(arr2.size() - 1);
+                arr1.add(mergeTwoLists(a, b));
+            }
+        }
+        return arr1.size() == 1 ? arr1.get(0) : arr2.get(0);
     }
 
-    public static Node mergeTwoLists(Node head1, Node head2) {
-        Node temp = new Node(-1);
-        Node tail = temp;
-        while (head1 != null && head2 != null) {
-            if (head1.data <= head2.data) {
-                tail.next = head1;
-                head1 = head1.next;
+    public static ListNode mergeTwoLists(ListNode a, ListNode b) {
+        ListNode temp = new ListNode(-1);
+        ListNode t = temp;
+        while (a != null && b != null) {
+            if (a.val <= b.val) {
+                t.next = a;
+                a = a.next;
             } else {
-                tail.next = head2;
-                head2 = head2.next;
+                t.next = b;
+                b = b.next;
             }
-            tail = tail.next;
+            t = t.next;
         }
-        tail.next = (head1 != null) ? head1 : head2;
+        t.next = (a != null) ? a : b;
         return temp.next;
     }
 
-    public static void printList(Node head) {
-        Node curr = head;
+    public static void printList(ListNode head) {
+        ListNode curr = head;
         while (curr != null) {
-            System.out.print(curr.data + " ");
+            System.out.print(curr.val + " ");
             curr = curr.next;
         }
         System.out.println();
@@ -37,18 +65,20 @@ public class MergeKSortedLists_Optimized {
 
     public static void main(String[] args) {
         // Example: three sorted linked lists
-        Node head1 = new Node(1, new Node(4, new Node(5)));
-        Node head2 = new Node(1, new Node(3, new Node(4)));
-        Node l3 = new Node(2, new Node(6));
+        ListNode head1 = new ListNode(1, new ListNode(4, new ListNode(5)));
+        ListNode head2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+        ListNode l3 = new ListNode(2, new ListNode(6));
+        ListNode l4 = new ListNode(2, new ListNode(6));
 
-        Node[] lists = { head1, head2, l3 };
+        ListNode[] lists = { head1, head2, l3, l4 };
 
         System.out.println("Original lists:");
         printList(head1);
         printList(head2);
         printList(l3);
+        printList(l4);
 
-        Node head = mergeKLists(lists);
+        ListNode head = mergeKLists(lists);
 
         System.out.println("Merged list:");
         printList(head);
