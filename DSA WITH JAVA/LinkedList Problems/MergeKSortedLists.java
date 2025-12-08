@@ -3,10 +3,10 @@ public class MergeKSortedLists {
     public static ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0)
             return null;
-        ListNode result = null;
+        ListNode head = null;
         for (int i = 0; i < lists.length; i++)
-            result = mergeTwoLists(result, lists[i]);
-        return result;
+            head = mergeTwoLists(head, lists[i]);
+        return head;
     }
 
     public static ListNode mergeTwoLists(ListNode head1, ListNode head2) {
@@ -48,10 +48,10 @@ public class MergeKSortedLists {
         printList(head2);
         printList(l3);
 
-        ListNode result = mergeKLists(lists);
+        ListNode head = mergeKLists(lists);
 
         System.out.println("Merged list:");
-        printList(result);
+        printList(head);
     }
 }
 
