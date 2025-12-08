@@ -1,5 +1,6 @@
 public class MaximumTwinSumLinkedList {
     public static int pairSum(ListNode head) {
+        int max = 0;
         ListNode s = head, f = head;
         while (f != null && f.next != null) {
             s = s.next;
@@ -12,7 +13,6 @@ public class MaximumTwinSumLinkedList {
             prev = curr;
             curr = fwd;
         }
-        int max = 0;
         while (head != null && prev != null) {
             int sum = head.val + prev.val;
             if (sum > max)
