@@ -1,11 +1,11 @@
 public class PalindromeLinkedList_Optimized {
-    public static boolean isPalindrome(ListNode head) {
-        ListNode s = head, f = head;
+    public static boolean isPalindrome(Node head) {
+        Node s = head, f = head;
         while (f != null && f.next != null) {
             s = s.next;
             f = f.next.next;
         }
-        ListNode curr = s, fwd = s, prev = null;
+        Node curr = s, fwd = s, prev = null;
         while (fwd != null) {
             fwd = curr.next;
             curr.next = prev;
@@ -13,7 +13,7 @@ public class PalindromeLinkedList_Optimized {
             curr = fwd;
         }
         while (prev != null && head != null) {
-            if (prev.val != head.val)
+            if (prev.data != head.data)
                 return false;
             prev = prev.next;
             head = head.next;
@@ -21,20 +21,20 @@ public class PalindromeLinkedList_Optimized {
         return true;
     }
 
-    public static void printList(ListNode head) {
-        ListNode curr = head;
+    public static void printList(Node head) {
+        Node curr = head;
         while (curr != null) {
-            System.out.print(curr.val + " ");
+            System.out.print(curr.data + " ");
             curr = curr.next;
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(1);
+        Node head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(1);
 
         System.out.println("Original list:");
         printList(head);
