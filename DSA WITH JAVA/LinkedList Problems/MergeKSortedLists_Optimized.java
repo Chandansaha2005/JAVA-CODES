@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.*;
 
 public class MergeKSortedLists_Optimized {
 
