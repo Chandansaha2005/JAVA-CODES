@@ -23,5 +23,25 @@ public class BasicSTLOfStack {
         System.out.println(st.size());
 
         System.out.println(st);
+        st.pop();
+        System.out.println(st.peek());
+        System.out.println(st.size());
+
+        System.out.println(st);
+        st.pop();
+        System.out.println(st.peek());
+        System.out.println(st.size());
+
+        System.out.println(st);
+        st.pop();
+        System.out.println(st.peek());
+        System.out.println(st.size());
+
+        System.out.println(st);
+        st.pop();
+        System.out.println(st.peek());
+        System.out.println(st.size());
+
+        System.out.println(st);
     }
 }
