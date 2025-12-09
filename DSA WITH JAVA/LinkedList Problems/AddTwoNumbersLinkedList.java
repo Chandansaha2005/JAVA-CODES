@@ -1,11 +1,11 @@
 public class AddTwoNumbersLinkedList {
-    public static Node addTwoNumbers(Node l1, Node l2) {
-        Node head = new Node(-1);
-        Node sum = head, i = null, j = null;
-        while (l1 != null && l1.data == 0) {
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(-1);
+        ListNode sum = head, i = null, j = null;
+        while (l1 != null && l1.val == 0) {
             l1 = l1.next;
         }
-        while (l2 != null && l2.data == 0) {
+        while (l2 != null && l2.val == 0) {
             l2 = l2.next;
         }
         if (l1 != null)
@@ -14,32 +14,32 @@ public class AddTwoNumbersLinkedList {
             j = reverseList(l2);
         int carry = 0;
         while (i != null && j != null) {
-            int data = i.data + j.data + carry;
-            carry = data / 10;
-            Node s = new Node(data % 10);
+            int val = i.val + j.val + carry;
+            carry = val / 10;
+            ListNode s = new ListNode(val % 10);
             sum.next = s;
             sum = sum.next;
             i = i.next;
             j = j.next;
         }
         while (i != null) {
-            int data = i.data + carry;
-            carry = data / 10;
-            Node s = new Node(data % 10);
+            int val = i.val + carry;
+            carry = val / 10;
+            ListNode s = new ListNode(val % 10);
             sum.next = s;
             sum = sum.next;
             i = i.next;
         }
         while (j != null) {
-            int data = j.data + carry;
-            carry = data / 10;
-            Node s = new Node(data % 10);
+            int val = j.val + carry;
+            carry = val / 10;
+            ListNode s = new ListNode(val % 10);
             sum.next = s;
             sum = sum.next;
             j = j.next;
         }
         if (carry > 0) {
-            Node s = new Node(carry);
+            ListNode s = new ListNode(carry);
             sum.next = s;
             sum = sum.next;
         }
@@ -48,10 +48,10 @@ public class AddTwoNumbersLinkedList {
         return sum;
     }
 
-    public static Node reverseList(Node head) {
+    public static ListNode reverseList(ListNode head) {
         if (head == null || head.next == null)
             return head;
-        Node p = null, c = head, f = head;
+        ListNode p = null, c = head, f = head;
         while (f != null) {
             f = c.next;
             c.next = p;
@@ -61,10 +61,10 @@ public class AddTwoNumbersLinkedList {
         return p;
     }
 
-    public static void printList(Node head) {
-        Node curr = head;
+    public static void printList(ListNode head) {
+        ListNode curr = head;
         while (curr != null) {
-            System.out.print(curr.data + " ");
+            System.out.print(curr.val + " ");
             curr = curr.next;
         }
         System.out.println();
@@ -73,35 +73,35 @@ public class AddTwoNumbersLinkedList {
     public static void main(String[] args) {
         // Example: two numbers represented as linked lists
         // Number 342 represented as 2 -> 4 -> 3
-        Node l1 = new Node(2, new Node(4, new Node(3)));
+        ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
         // Number 465 represented as 5 -> 6 -> 4
-        Node l2 = new Node(5, new Node(6, new Node(4)));
+        ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
 
         System.out.println("First number:");
         printList(l1);
         System.out.println("Second number:");
         printList(l2);
 
-        Node result = addTwoNumbers(l1, l2);
+        ListNode result = addTwoNumbers(l1, l2);
 
         System.out.println("Sum as linked list:");
         printList(result);
     }
 }
 
-class Node {
-    int data;
-    Node next;
+class ListNode {
+    int val;
+    ListNode next;
 
-    Node() {
+    ListNode() {
     }
 
-    Node(int data) {
-        this.data = data;
+    ListNode(int val) {
+        this.val = val;
     }
 
-    Node(int data, Node next) {
-        this.data = data;
+    ListNode(int val, ListNode next) {
+        this.val = val;
         this.next = next;
     }
 }
