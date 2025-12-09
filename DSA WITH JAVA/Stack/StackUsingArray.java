@@ -9,7 +9,6 @@ class StackClass {
         else
             stack[++top] = data;
     }
-
     int pop() {
         if (top == -1) {
             System.out.println("Stack Underflow");
