@@ -15,7 +15,8 @@ public class ReverseBetweenLinkedList {
                 temp = temp.next;
             }
             r1.next = null;
-            l1 = reverseList(l1);
+            head = reverseList(l1);
+            l1 = head;
             while (l1.next != null)
                 l1 = l1.next;
             l1.next = r2;
