@@ -12,14 +12,15 @@ class Dnode {
 
 public class ReverseDoublyLinkedList {
     public static Dnode reverse(Dnode head) {
-        Node tail = head;
-        while(tail.next!=null)tail=tail.next;
-        while(tail.prev!=null){
-            tail.next=tail.prev;
-            tail=tail.prev;
-        }head=tail;
-        return head;
-        return head;
+        Dnode p = null, c = head, f = head;
+        while (c != null) {
+            f = c.next;
+            c.next = p;
+            c.prev = f;
+            p = c;
+            c = f;
+        }
+        return p;
     }
 
     public static void printList(Dnode head) {
@@ -32,9 +33,9 @@ public class ReverseDoublyLinkedList {
     }
 
     public static void main(String[] args) {
-        Dnode head = new Dnode(1);
-        Dnode second = new Dnode(2);
-        Dnode third = new Dnode(3);
+        Dnode head = new Dnode(3);
+        Dnode second = new Dnode(4);
+        Dnode third = new Dnode(5);
 
         head.next = second;
         second.prev = head;
