@@ -1,52 +1,37 @@
 public class FlattenLinkedList {
-    public static Node flatten(Node root) {
-        if (root == null || root.next == null) return root;
-        root.next = flatten(root.next);
-        return merge(root, root.next);
-    }
-
-    private static Node merge(Node a, Node b) {
-        if (a == null) return b;
-        if (b == null) return a;
-        Node result;
-        if (a.data < b.data) {
-            result = a;
-            result.bottom = merge(a.bottom, b);
-        } else {
-            result = b;
-            result.bottom = merge(a, b.bottom);
-        }
-        result.next = null;
-        return result;
-    }
+    public static Bode flatten(Bode head) {
+        if (head == null)
+            return head;
+        
 
     public static void main(String[] args) {
-        Node root = new Node(5);
-        root.bottom = new Node(7);
-        root.bottom.bottom = new Node(8);
+        Bode root = new Bode(5);
+        root.next = new Bode(10);
+        root.next.next = new Bode(19);
 
-        root.next = new Node(10);
-        root.next.bottom = new Node(20);
+        root.bottom = new Bode(7);
+        root.bottom.bottom = new Bode(8);
 
-        root.next.next = new Node(19);
-        root.next.next.bottom = new Node(22);
-        root.next.next.bottom.bottom = new Node(50);
+        root.next.bottom = new Bode(20);
 
-        Node ans = flatten(root);
+        root.next.next.bottom = new Bode(22);
+        root.next.next.bottom.bottom = new Bode(50);
 
-        Node temp = ans;
-        while (temp != null) {
-            System.out.print(temp.data + " ");
-            temp = temp.bottom;
+        Bode res = flatten(root);
+        Bode p = res;
+        while (p != null) {
+            System.out.print(p.data + " ");
+            p = p.bottom;
         }
     }
 }
 
-class Node {
+class Bode {
     int data;
-    Node next;
-    Node bottom;
-    Node(int x) {
+    Bode next;
+    Bode bottom;
+
+    Bode(int x) {
         data = x;
         next = null;
         bottom = null;
