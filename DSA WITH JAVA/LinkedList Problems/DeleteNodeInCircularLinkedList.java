@@ -1,4 +1,4 @@
-public class DeleteNodeInCircularLinkedLis {
+public class DeleteNodeInCircularLinkedList {
     public static Node deleteNode(Node head, int key) {
         Node temp = head;
         if (head.next == head)
