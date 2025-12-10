@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 class StackClass {
     int MAX = 5;
     int[] stack = new int[MAX];
@@ -26,6 +28,22 @@ class StackClass {
         return stack[top];
     }
 
+    int get(int idx) {
+        if (idx > top || idx < 0) {
+            System.out.println("Wrong Index");
+            return -1;
+        }
+        Stack<Integer> st = new Stack<>();
+        for (int i = 0; i < idx; i++) {
+            st.push(stack[top--]);
+        }
+        int val = stack[top];
+        for (int i = 0; i < idx; i++) {
+            stack[top++] = st.pop();
+        }
+        return val;
+    }
+
     void printStack() {
         if (top == -1) {
             System.out.println("Stack Underflow");
@@ -52,7 +70,7 @@ public class StackUsingArray {
         st.push(40);
         st.printStack();
         System.out.println(st.top);
-
+        System.out.println(st.get(3));
         st.pop();
         st.printStack();
         System.out.println(st.top);
