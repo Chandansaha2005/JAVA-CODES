@@ -13,9 +13,28 @@ class Mode {
 }
 
 public class FlattenMultiLevelDLL {
-
     public static Mode flatten(Mode head) {
-        // solve here later
+        if (head == null)
+            return head;
+        Mode temp = head;
+        while (temp != null) {
+            if (temp.child == null)
+                temp = temp.next;
+            else {
+                Mode a = temp.next;
+                Mode inner = flatten(temp.child);
+                temp.child = null;
+                temp.next = inner;
+                inner.prev = temp;
+                Mode c = inner;
+                for (; c.next != null; c = c.next) {
+                }
+                c.next = a;
+                if (a != null)
+                    a.prev = c;
+                temp = a;
+            }
+        }
         return head;
     }
 
