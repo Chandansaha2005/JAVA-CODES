@@ -1,25 +1,26 @@
 public class CriticalPointsInList {
     public static int[] nodesBetweenCriticalPoints(ListNode head) {
         int[] arr = { -1, -1 };
-        int f = -1, l = -1, p = -1, idx = 1;
-        if (head == null || head.next == null || head.next.next == null)
-            return arr;
+        int f = -1, l = -1, min = Integer.MAX_VALUE, idx = 1;
         ListNode a = head, b = head.next, c = head.next.next;
+        if (c == null)
+            return arr;
         while (c != null) {
-            if ((b.val > a.val && b.val > c.val) || (b.val < a.val && b.val < c.val))
+            if ((b.val > a.val && b.val > c.val) || (b.val < a.val && b.val < c.val)) {
                 if (f == -1)
                     f = idx;
-                else {
-                    p = l;
-                    l = idx;
-                }
+                if (l != -1)
+                    min = Math.min(min, idx - l);
+                l = idx;
+            }
             a = b;
             b = c;
             c = c.next;
             idx++;
         }
-        arr[0] = l - p;
-        arr[1] = l - f;
+        int max = l - f;
+        arr[0] = (min == Integer.MAX_VALUE) ? -1 : min;
+        arr[1] = (max == 0) ? -1 : max;
         return arr;
     }
 
