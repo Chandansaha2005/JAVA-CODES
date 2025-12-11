@@ -1,8 +1,27 @@
 public class FlattenLinkedList {
     public static Bode flatten(Bode head) {
-        if (head == null)
+        if (head == null || head.next == null)
             return head;
-        
+        Bode merged = flatten(head.next);
+        return mergeTwoLists(merged, head);
+    }
+
+    public static Bode mergeTwoLists(Bode head1, Bode head2) {
+        Bode temp = new Bode(-1);
+        Bode tail = temp;
+        while (head1 != null && head2 != null) {
+            if (head1.data <= head2.data) {
+                tail.bottom = head1;
+                head1 = head1.bottom;
+            } else {
+                tail.bottom = head2;
+                head2 = head2.bottom;
+            }
+            tail = tail.bottom;
+        }
+        tail.bottom = (head1 != null) ? head1 : head2;
+        return temp.bottom;
+    }
 
     public static void main(String[] args) {
         Bode root = new Bode(5);

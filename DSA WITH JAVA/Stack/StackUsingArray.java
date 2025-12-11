@@ -39,7 +39,7 @@ class StackClass {
         }
         int val = stack[top];
         for (int i = 0; i < idx; i++) {
-            stack[top++] = st.pop();
+            stack[++top] = st.pop();
         }
         return val;
     }
@@ -71,6 +71,7 @@ public class StackUsingArray {
         st.printStack();
         System.out.println(st.top);
         System.out.println(st.get(3));
+        st.printStack();
         st.pop();
         st.printStack();
         System.out.println(st.top);
