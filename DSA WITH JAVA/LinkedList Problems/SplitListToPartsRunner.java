@@ -15,16 +15,27 @@ public class SplitListToPartsRunner {
                 e++;
             }
         } else {
-            int p = len / k, e = 0, idx = 0;
-            for (ListNode i = head; i != null; i = i.next) {
-                ListNode a = i;
-                while (e != p) {
-                    a = a.next;
-                    e++;
+            int p = len / k, rem = len % k, idx = 0;
+            for (ListNode i = head; i != null;) {
+                ListNode a = i, d = i;
+                int e = 1;
+                if (rem != 0) {
+                    while (e < p + 1 && a != null) {
+                        a = a.next;
+                        e++;
+                    }
+                    rem--;
+                } else {
+                    while (e < p && a != null) {
+                        a = a.next;
+                        e++;
+                    }
                 }
-                ListNode b = a.next;
+                ListNode b = null;
+                if (a.next != null)
+                    b = a.next;
                 a.next = null;
-                arr[idx] = i;
+                arr[idx] = d;
                 idx++;
                 i = b;
             }
@@ -33,15 +44,13 @@ public class SplitListToPartsRunner {
     }
 
     public static void main(String[] args) {
-        ListNode head = new ListNode(1,
-                new ListNode(2,
-                        new ListNode(3,
-                                new ListNode(4,
-                                        new ListNode(5,
-                                                new ListNode(6,
-                                                        new ListNode(7)))))));
+        ListNode head = new ListNode(2,
+                new ListNode(3,
+                        new ListNode(4,
+                                new ListNode(5,
+                                        new ListNode(6)))));
 
-        int k = 5;
+        int k = 3;
 
         ListNode[] parts = splitListToParts(head, k);
 
