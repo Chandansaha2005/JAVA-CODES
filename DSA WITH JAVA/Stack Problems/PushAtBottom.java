@@ -1,13 +1,13 @@
 import java.util.Stack;
 
 public class PushAtBottom {
-    public static void PushAtEnd(Stack<Integer> st, int data) {
+    public static void PushAtEnd(Stack<Integer> st, int x) {
         if (st.size() == 0) {
-            st.push(data);
+            st.push(x);
             return;
         }
         int val = st.pop();
-        PushAtEnd(st, data);
+        PushAtEnd(st, x);
         st.push(val);
     }
 
