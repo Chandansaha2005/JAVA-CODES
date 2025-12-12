@@ -40,8 +40,7 @@ class StackList {
             return p;
         }
         Node temp = head;
-        for (; temp.next != top; temp = temp.next) {
-        }
+        for (; temp.next != top; temp = temp.next) {}
         top = temp;
         int p = top.data;
         temp.next = null;
