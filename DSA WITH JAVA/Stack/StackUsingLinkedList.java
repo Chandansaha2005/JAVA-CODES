@@ -27,7 +27,9 @@ class StackList {
         size++;
     }
 
-    int pop() {
+    int pop() throws Exception {
+        if (top == null)
+            throw new Exception("Stack Underflow Error");
         int p = top.data;
         top = top.next;
         return p;
@@ -45,7 +47,7 @@ class StackList {
 }
 
 public class StackUsingLinkedList {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         StackList st = new StackList(10);
         st.push(20);
         st.display();
@@ -58,13 +60,25 @@ public class StackUsingLinkedList {
         st.display();
         st.pop();
         st.display();
-
+        
         st.push(20);
         st.display();
         st.push(30);
         st.display();
-
+        
         System.out.println("\nPeek = " + st.peek());
-
+        
+        st.pop();
+        st.display();
+        st.pop();
+        st.display();
+        st.pop();
+        st.display();
+        st.pop();
+        st.display();
+        st.pop();
+        st.display();
+        st.pop();
+        st.display();
     }
 }
