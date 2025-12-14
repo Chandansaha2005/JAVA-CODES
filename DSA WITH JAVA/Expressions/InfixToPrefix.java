@@ -1,8 +1,6 @@
 import java.util.Stack;
 
 public class InfixToPrefix {
-
-    // precedence helper
     static int precedence(char ch) {
         if (ch == '+' || ch == '-')
             return 1;
