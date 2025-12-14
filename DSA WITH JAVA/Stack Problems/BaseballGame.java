@@ -2,12 +2,25 @@ import java.util.Stack;
 
 public class BaseballGame {
     public int calPoints(String[] op) {
-        Stack<String> st = new Stack<>();
+        Stack<Integer> st = new Stack<>();
         for (int i = 0; i < op.length; i++) {
-            c ch = op[i].charAt(0);
-            if(ch.valueOf))
+            String ch = op[i];
+            if (ch.equals("C"))
+                st.pop();
+            else if (ch.equals("D"))
+                st.push(st.peek() * 2);
+            else if (ch.equals("+")) {
+                int v1 = st.pop();
+                int n = v1 + st.peek();
+                st.push(v1);
+                st.push(n);
+            } else
+                st.push(Integer.parseInt(ch));
         }
-        return 0;
+        int sum = 0;
+        while (!st.isEmpty()) 
+            sum += st.pop();
+        return sum;
     }
 
     public static void main(String[] args) {
