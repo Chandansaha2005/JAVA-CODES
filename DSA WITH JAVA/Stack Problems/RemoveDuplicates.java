@@ -13,7 +13,6 @@ public class RemoveDuplicates {
             res.append(ch);
         return res.toString();
     }
-
     public static void main(String[] args) {
         String[] tests = { "a", "aa", "abca", "azxxzy", "abbaca", "abcabc", "aabbcc"
         };
