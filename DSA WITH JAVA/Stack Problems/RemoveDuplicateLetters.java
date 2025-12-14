@@ -1,7 +1,6 @@
 public class RemoveDuplicateLetters {
     public static String removeDuplicateLetters(String s) {
         String res = "";
-        StringBuilder sc = new StringBuilder();
         for (int i = 0; i < s.length(); i++)
             if (!res.contains(String.valueOf(s.charAt(i))))
                 res += String.valueOf(s.charAt(i));
