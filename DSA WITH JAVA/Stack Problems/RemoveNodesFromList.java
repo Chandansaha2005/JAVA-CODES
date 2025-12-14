@@ -17,7 +17,7 @@ public class RemoveNodesFromList {
             if (temp == head)
                 st.push(temp);
             else if (st.peek().val < temp.val) {
-                while (!st.isEmpty() &&st.peek().val < temp.val)
+                while (!st.isEmpty() && st.peek().val < temp.val)
                     st.pop();
                 st.push(temp);
             } else
@@ -30,10 +30,20 @@ public class RemoveNodesFromList {
             temp = temp.next;
         }
         temp.next = null;
-        return newhead.next; 
+        head = reverse(newhead.next);
+        return head;
     }
 
-    
+    public static ListNode reverse(ListNode head) {
+        ListNode c = head, f = head, p = null;
+        while (f != null) {
+            f = c.next;
+            c.next = p;
+            p = c;
+            c = f;
+        }
+        return p;
+    }
 
     // utility to print list
     public static void printList(ListNode head) {
