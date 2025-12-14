@@ -11,9 +11,9 @@ public class PrefixToPostfix {
 
             if (Character.isDigit(ch)) {
                 val.push(String.valueOf(ch));
-            } else if (ch == '(') {
+            } else if (ch == '(')
                 op.push(ch);
-            } else { // operator
+            else { // operator
                 while (!op.isEmpty()) {
                     String v1 = val.pop();
                     String v2 = val.pop();
