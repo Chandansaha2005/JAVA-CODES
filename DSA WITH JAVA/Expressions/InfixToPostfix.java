@@ -26,7 +26,7 @@ public class InfixToPostfix {
                     String v1 = val.pop();
                     String v2 = val.pop();
                     char o = op.pop();
-                    String newvalue = o + v2 + v1;
+                    String newvalue = v2 + v1 + o;
                     val.push(newvalue);
                 }
                 op.pop(); // remove '('
@@ -37,7 +37,7 @@ public class InfixToPostfix {
                     String v1 = val.pop();
                     String v2 = val.pop();
                     char o = op.pop();
-                    String newvalue = o + v2 + v1;
+                    String newvalue = v2 + v1 + o;
                     val.push(newvalue);
                 }
                 op.push(ch);
@@ -48,7 +48,7 @@ public class InfixToPostfix {
             String v1 = val.pop();
             String v2 = val.pop();
             char o = op.pop();
-            String newvalue = o + v2 + v1;
+            String newvalue = v2 + v1 + o;
             val.push(newvalue);
         }
 
