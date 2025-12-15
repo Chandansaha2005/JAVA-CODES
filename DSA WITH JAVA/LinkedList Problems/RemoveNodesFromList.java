@@ -1,4 +1,4 @@
-public class RemoveNodesFromList_Optimal {
+public class RemoveNodesFromList {
     public static ListNode removeNodes(ListNode head) {
         ListNode rev = reverse(head);
         ListNode result = new ListNode(0);
