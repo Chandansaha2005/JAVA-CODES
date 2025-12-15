@@ -1,11 +1,13 @@
 import java.util.Stack;
 
 public class RemoveNodesFromList_Optimal {
-    public ListNode removeNodes(ListNode head) {
+    public static ListNode removeNodes(ListNode head) {
         ListNode temp = reverse(head);
-        ListNode i = temp, j = temp;
-        while (i != null && j != null) {
-            
+        ListNode i = temp;
+        while (i != null) {
+            ListNode j = i.next;
+            if (j.val < i.val)
+                j = j.next;
         }
         return temp;
     }
@@ -42,8 +44,7 @@ public class RemoveNodesFromList_Optimal {
         System.out.println("Original list:");
         printList(head);
 
-        RemoveNodesFromList sol = new RemoveNodesFromList();
-        ListNode result = sol.removeNodes(head);
+        ListNode result = removeNodes(head);
 
         System.out.println("Modified list:");
         printList(result);
