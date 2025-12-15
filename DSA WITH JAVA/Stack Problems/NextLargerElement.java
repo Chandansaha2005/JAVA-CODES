@@ -3,20 +3,22 @@ import java.util.Stack;
 
 public class NextLargerElement {
     public static ArrayList<Integer> nextLargerElement(int[] arr) {
-        ArrayList<Integer> a = new ArrayList<>();
+        int n = arr.length;
+        int[] array = new int[n];
+        array[n - 1] = -1;
+        ArrayList<Integer> result = new ArrayList<>();
         Stack<Integer> st = new Stack<>();
-        for (int i : arr) {
-            if (!st.isEmpty() && st.peek() < i) {
+        st.push(arr[n - 1]);
+        for (int i = n - 2; i >= 0; i--) {
+            while (!st.isEmpty() && st.peek() <= arr[i])
                 st.pop();
-                st.push(i);
-            } else if (st.peek() > i){
-                st.pop();
-                st.push(-1);
-            }
+            array[i] = st.isEmpty() ? -1 : st.peek();
+            st.push(arr[i]);
         }
-        while (!st.isEmpty())
-            a.add(st.pop());
-        return a;
+        for (int i : array) {
+            result.add(i);
+        }
+        return result;
     }
 
     public static void main(String[] args) {
