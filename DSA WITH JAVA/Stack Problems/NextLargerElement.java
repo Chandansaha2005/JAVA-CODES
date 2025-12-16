@@ -6,8 +6,10 @@ public class NextLargerElement {
         int n = arr.length;
         int[] array = new int[n];
         array[n - 1] = -1;
+
         ArrayList<Integer> result = new ArrayList<>();
         Stack<Integer> st = new Stack<>();
+
         st.push(arr[n - 1]);
         for (int i = n - 2; i >= 0; i--) {
             while (!st.isEmpty() && st.peek() <= arr[i])
@@ -15,6 +17,7 @@ public class NextLargerElement {
             array[i] = st.isEmpty() ? -1 : st.peek();
             st.push(arr[i]);
         }
+
         for (int i : array) {
             result.add(i);
         }
