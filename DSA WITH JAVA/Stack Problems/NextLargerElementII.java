@@ -1,13 +1,27 @@
 import java.util.Arrays;
 import java.util.Stack;
 
-public class NextGreaterElementII {
+public class NextLargerElementII {
     public int[] nextGreaterElements(int[] nums) {
         int n = nums.length;
         int max = findMax(nums);
         int[] arr = new int[nums.length];
+        arr[n - 1] = (nums[n - 1] == max) ? -1 : max;
         Stack<Integer> st = new Stack<>();
+        st.push(max);
 
+        for (int i = n - 2; i >= 0; i--) {
+            if (nums[i] < st.peek()) {
+                arr[i] = st.peek();
+                st.push(nums[i]);
+            } else if (nums[i] > st.peek()) {
+                while (st.peek() > nums[i])
+                    st.pop();
+                arr[i] = st.peek();
+                st.push(nums[i]);
+            } else
+                arr[i] = -1;
+        }
         return arr;
     }
 
@@ -20,7 +34,7 @@ public class NextGreaterElementII {
     }
 
     public static void main(String[] args) {
-        NextGreaterElementII sol = new NextGreaterElementII();
+        NextLargerElementII sol = new NextLargerElementII();
 
         int[][] tests = {
                 { 1, 2, 1 },
@@ -35,5 +49,4 @@ public class NextGreaterElementII {
             System.out.println(" -> Output: " + Arrays.toString(result));
         }
     }
-
 }
