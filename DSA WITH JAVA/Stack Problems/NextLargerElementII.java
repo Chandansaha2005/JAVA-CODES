@@ -4,33 +4,22 @@ import java.util.Stack;
 public class NextLargerElementII {
     public int[] nextGreaterElements(int[] nums) {
         int n = nums.length;
-        int max = findMax(nums);
         int[] arr = new int[nums.length];
-        arr[n - 1] = (nums[n - 1] == max) ? -1 : max;
-        Stack<Integer> st = new Stack<>();
-        st.push(max);
 
-        for (int i = n - 2; i >= 0; i--) {
-            if (nums[i] < st.peek()) {
+        Stack<Integer> st = new Stack<>();
+        for (int i = n - 1; i >= 0; i--)
+            st.push(nums[i]);
+
+        for (int i = n - 1; i >= 0; i--) {
+            while (!st.isEmpty() && st.peek() <= nums[i])
+                st.pop();
+            if (!st.isEmpty())
                 arr[i] = st.peek();
-                st.push(nums[i]);
-            } else if (nums[i] > st.peek()) {
-                while (st.peek() > nums[i])
-                    st.pop();
-                arr[i] = st.peek();
-                st.push(nums[i]);
-            } else
+            else
                 arr[i] = -1;
+            st.push(nums[i]);
         }
         return arr;
-    }
-
-    public static int findMax(int[] nums) {
-        int max = nums[0];
-        for (int i = 1; i < nums.length; i++)
-            if (nums[i] > max)
-                max = nums[i];
-        return max;
     }
 
     public static void main(String[] args) {
