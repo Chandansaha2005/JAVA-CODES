@@ -5,7 +5,7 @@ public class CelebrityFinder {
         Stack<Integer> st = new Stack<>();
         for (int i = 0; i < mat.length; i++)
             st.push(i);
-        while (!st.isEmpty()) {
+        while (st.size()>1) {
             int a = st.pop();
             int b = st.pop();
             boolean af =true,bf=true;
