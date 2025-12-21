@@ -1,19 +1,21 @@
 import java.util.Arrays;
+import java.util.Stack;
 
 public class NumberOfVisiblePeople {
     public static int[] canSeePersonsCount(int[] h) {
-        int[] arr = new int[h.length];
-        for (int i = 0; i < h.length - 1; i++) {
-            int count = 1;
-            int prev = 0;
-            for (int j = i + 1; h[i] > h[j] && j < h.length - 1;) {
-                prev = j;
-                j++;
-                if (h[prev] > h[j])
-                    continue;
+        int n = h.length;
+        int[] arr = new int[n];
+        Stack<Integer> st = new Stack<>();
+        st.push(h[n - 1]);
+        for (int i = n - 2; i > 0; i--) {
+            int count = 0;
+            while (!st.isEmpty() && st.peek() < h[i]) {
+                st.pop();
                 count++;
-                if (h[i] < h[j])
-                    break;
+            }
+            if (h[i] < st.peek()) {
+                st.push(h[i]);
+                count++;
             }
             arr[i] = count;
         }
