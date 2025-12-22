@@ -9,24 +9,28 @@ public class LargestRectangleInHistogram {
         nse[n - 1] = n;
         st.push(n - 1);
         for (int i = n - 2; i >= 0; i--) {
-            while (!st.isEmpty() && arr[st.peek()] >= arr[i]) st.pop();
+            while (!st.isEmpty() && arr[st.peek()] >= arr[i])
+                st.pop();
             nse[i] = st.isEmpty() ? n : st.peek();
             st.push(i);
         }
 
-        while (!st.isEmpty()) st.pop();
+        while (!st.isEmpty())
+            st.pop();
 
         int[] pse = new int[n];
         pse[0] = -1;
         st.push(0);
         for (int i = 1; i < n; i++) {
-            while (!st.isEmpty() && arr[st.peek()] >= arr[i]) st.pop();
+            while (!st.isEmpty() && arr[st.peek()] >= arr[i])
+                st.pop();
             pse[i] = st.isEmpty() ? -1 : st.peek();
             st.push(i);
         }
 
         int maxArea = 0;
-        for (int i = 0; i < pse.length; i++) maxArea = Math.max(maxArea, arr[i] * (nse[i] - pse[i] - 1));
+        for (int i = 0; i < pse.length; i++)
+            maxArea = Math.max(maxArea, arr[i] * (nse[i] - pse[i] - 1));
         return maxArea;
     }
 
