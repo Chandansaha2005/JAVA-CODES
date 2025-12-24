@@ -1,17 +1,23 @@
 import java.util.Stack;
 
 public class MaximalRectangleInMatrixII {
-    public static int maxArea(int mat[][]) {
-        if (mat.length == 0)
+    public static int maxArea(int matrix[][]) {
+        if (matrix.length == 0)
             return 0;
-        for (int i = 0; i < mat[0].length; i++)
-            for (int j = 1; j < mat.length; j++)
-                if (mat[j][i] != 0)
-                    mat[j][i] += mat[j - 1][i];
-
+        int cols = matrix[0].length;
+        int[] heights = new int[cols];
+        int[] prefix = new int[matrix.length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < cols; j++)
+                if (matrix[i][j] == 0)
+                    heights[j] = 0;
+                else
+                    heights[j] += 1;
+            prefix[i] = largestRectangleArea(heights);
+        }
         int max = 0;
-        for (int[] row : mat)
-            max = Math.max(max, largestRectangleArea(row));
+        for (int area : prefix)
+            max = Math.max(max, area);
         return max;
     }
 
@@ -27,10 +33,8 @@ public class MaximalRectangleInMatrixII {
             nse[i] = st.isEmpty() ? n : st.peek();
             st.push(i);
         }
-
         while (!st.isEmpty())
             st.pop();
-
         int[] pse = new int[n];
         pse[0] = -1;
         st.push(0);
@@ -40,7 +44,6 @@ public class MaximalRectangleInMatrixII {
             pse[i] = st.isEmpty() ? -1 : st.peek();
             st.push(i);
         }
-
         int maxArea = 0;
         for (int i = 0; i < pse.length; i++)
             maxArea = Math.max(maxArea, arr[i] * (nse[i] - pse[i] - 1));
@@ -48,7 +51,6 @@ public class MaximalRectangleInMatrixII {
     }
 
     public static void main(String[] args) {
-        // Sample test case 1
         int[][] mat1 = {
                 { 1, 0, 1, 0, 0 },
                 { 1, 0, 1, 1, 1 },
@@ -56,14 +58,10 @@ public class MaximalRectangleInMatrixII {
                 { 1, 0, 0, 1, 0 }
         };
         System.out.println("Test1 Output: " + maxArea(mat1));
-
-        // Sample test case 2 (single row)
         int[][] mat2 = {
                 { 1, 0, 1, 1 }
         };
         System.out.println("Test2 Output: " + maxArea(mat2));
-
-        // Sample test case 3 (empty matrix)
         int[][] mat3 = {};
         System.out.println("Test3 Output: " + maxArea(mat3));
     }
