@@ -162,7 +162,8 @@ This repo is a collection of Java programs that I’m writing as part of my dail
 - Stack using Java STL  
 - Stack using Array  
 - Stack using Linked List  
-
+- **Stack Problems (LeetCode & GFG) – 15+ practice problems**
+  
 </details>
 
 ---
