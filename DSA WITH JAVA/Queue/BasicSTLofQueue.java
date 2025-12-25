@@ -22,17 +22,21 @@ public class BasicSTLofQueue {
         System.out.println(q.peek());
         System.out.println("Removing " + q.remove());
         System.out.println(q);
+        System.out.println("Queue Size = " + q.size());
 
         System.out.println(q.peek());
         System.out.println("Removing " + q.remove());
         System.out.println(q);
+        System.out.println("Queue Size = " + q.size());
 
         System.out.println(q.peek());
         System.out.println("Removing " + q.remove());
         System.out.println(q);
-        
+        System.out.println("Queue Size = " + q.size());
+
         System.out.println(q.peek());
         System.out.println("Removing " + q.remove());
         System.out.println(q);
+        System.out.println("Queue Size = " + q.size());
     }
 }
