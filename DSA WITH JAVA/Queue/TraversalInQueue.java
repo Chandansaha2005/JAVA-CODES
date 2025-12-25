@@ -10,6 +10,7 @@ public class TraversalInQueue {
         q.add(40);
         q.add(50);
 
+        // This for loop is iterating through the elements in the queue `q`.
         for (int i = 0; i < q.size(); i++) {
             System.out.print(q.peek() + " ");
             q.add(q.remove());
