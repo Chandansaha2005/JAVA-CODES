@@ -1,7 +1,18 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 class FindTheWinner {
     public static int findTheWinner(int n, int k) {
-        // TODO: implement logic
-        return -1; // placeholder
+        Queue<Integer> q = new LinkedList<>();
+        for (int i = 0; i < n; i++)
+            q.add(i + 1);
+        System.out.println(q);
+        while (q.size() > 1) {
+            for (int i = 0; i < k - 1; i++)
+                q.add(q.remove());
+            q.remove();
+        }
+        return q.remove();
     }
 
     public static void main(String[] args) {
