@@ -7,11 +7,20 @@ public class OperationsMethods {
             System.out.print(q.peek() + " ");
             q.add(q.remove());
         }
+        System.out.println();
     }
 
     private static int del(Queue<Integer> q) {
-        System.out.print("Delete = " + q.peek() + " ");
         return q.remove();
+    }
+
+    private static void insert(Queue<Integer> q, int idx, int val) {
+        for (int i = 0; i < q.size(); i++) {
+            if (i == idx)
+                q.add(val);
+            else
+                q.add(q.remove());
+        }
     }
 
     public static void main(String[] args) {
@@ -22,6 +31,9 @@ public class OperationsMethods {
         q.add(40);
 
         display(q);
-        del(q);
+        System.out.println("Delete = " + del(q) + " ");
+
+        insert(q, 2, 50);
+        display(q);
     }
 }
