@@ -10,17 +10,32 @@ public class OperationsMethods {
         System.out.println();
     }
 
-    private static int del(Queue<Integer> q) {
-        return q.remove();
+    private static int del(Queue<Integer> q, int idx) {
+        int d = -1;
+        for (int i = 0; i < q.size(); i++)
+            if (i == idx)
+                d = q.remove();
+            else
+                q.add(q.remove());
+        return d;
+    }
+
+    private static int peekAtAny(Queue<Integer> q, int idx) {
+        int d = -1;
+        for (int i = 0; i < q.size(); i++)
+            if (i == idx)
+                d = q.peek();
+            else
+                q.add(q.remove());
+        return d;
     }
 
     private static void insert(Queue<Integer> q, int idx, int val) {
-        for (int i = 0; i < q.size(); i++) {
+        for (int i = 0; i < q.size(); i++)
             if (i == idx)
                 q.add(val);
             else
                 q.add(q.remove());
-        }
     }
 
     public static void main(String[] args) {
@@ -31,7 +46,10 @@ public class OperationsMethods {
         q.add(40);
 
         display(q);
-        System.out.println("Delete = " + del(q) + " ");
+        System.out.println("Delete = " + del(q, 2) + " ");
+
+        display(q);
+        System.out.println("peeked = " + peekAtAny(q, 2) + " ");
 
         insert(q, 2, 50);
         display(q);
