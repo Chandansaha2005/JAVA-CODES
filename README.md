@@ -166,6 +166,16 @@ This repo is a collection of Java programs that I’m writing as part of my dail
   
 </details>
 
+<details> 
+<summary>🚦 Queue</summary>
+
+- Basics of Queue  
+- Queue using Java STL  
+- Queue using Array  
+- Queue using Linked List  
+
+</details>
+
 ---
 
 ## 💡 Who is this for?
