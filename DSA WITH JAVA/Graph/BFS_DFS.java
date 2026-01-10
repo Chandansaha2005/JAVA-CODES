@@ -50,7 +50,8 @@ public class BFS_DFS {
 
     static int indexOf(char[] v, char c) {
         for (int i = 0; i < v.length; i++)
-            if (v[i] == c) return i;
+            if (v[i] == c)
+                return i;
         return -1;
     }
 
@@ -83,5 +84,6 @@ public class BFS_DFS {
 
         bfs(graph, vertices, start);
         dfs(graph, vertices, start);
+        sc.close();
     }
 }
