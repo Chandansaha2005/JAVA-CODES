@@ -2,71 +2,86 @@ import java.util.*;
 
 public class BFS_DFS {
 
-    static int id(char[] v, char c) {
-        for (int i = 0; i < v.length; i++)
-            if (v[i] == c)
-                return i;
-        return -1;
-    }
-
-    static void bfs(int[][] g, char[] v, char s) {
-        boolean[] vis = new boolean[v.length];
+    static void bfs(int[][] g, char[] v, char start) {
+        boolean[] visited = new boolean[v.length];
         Queue<Integer> q = new LinkedList<>();
-        q.add(id(v, s));
-        vis[q.peek()] = true;
+
+        int s = indexOf(v, start);
+        visited[s] = true;
+        q.add(s);
 
         System.out.print("BFS: ");
         while (!q.isEmpty()) {
             int u = q.poll();
             System.out.print(v[u] + " ");
-            for (int i = 0; i < v.length; i++)
-                if (g[u][i] == 1 && !vis[i]) {
-                    vis[i] = true;
+
+            for (int i = 0; i < v.length; i++) {
+                if (g[u][i] == 1 && !visited[i]) {
+                    visited[i] = true;
                     q.add(i);
                 }
+            }
         }
         System.out.println();
     }
 
-    static void dfs(int[][] g, char[] v, char s) {
-        boolean[] vis = new boolean[v.length];
-        Stack<Integer> st = new Stack<>();
-        st.push(id(v, s));
+    static void dfs(int[][] g, char[] v, char start) {
+        boolean[] visited = new boolean[v.length];
+        Stack<Integer> s = new Stack<>();
+
+        int startIndex = indexOf(v, start);
+        s.push(startIndex);
 
         System.out.print("DFS: ");
-        while (!st.isEmpty()) {
-            int u = st.pop();
-            if (vis[u])
-                continue;
-            vis[u] = true;
-            System.out.print(v[u] + " ");
-            for (int i = v.length - 1; i >= 0; i--)
-                if (g[u][i] == 1 && !vis[i])
-                    st.push(i);
+        while (!s.isEmpty()) {
+            int u = s.pop();
+            if (!visited[u]) {
+                visited[u] = true;
+                System.out.print(v[u] + " ");
+
+                for (int i = v.length - 1; i >= 0; i--) {
+                    if (g[u][i] == 1 && !visited[i])
+                        s.push(i);
+                }
+            }
         }
         System.out.println();
+    }
+
+    static int indexOf(char[] v, char c) {
+        for (int i = 0; i < v.length; i++)
+            if (v[i] == c) return i;
+        return -1;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        System.out.print("Vertices count: ");
         int n = sc.nextInt();
-        char[] v = new char[n];
-        int[][] g = new int[n][n];
 
+        char[] vertices = new char[n];
+        int[][] graph = new int[n][n];
+
+        System.out.print("Vertices: ");
         for (int i = 0; i < n; i++)
-            v[i] = sc.next().charAt(0);
+            vertices[i] = sc.next().charAt(0);
 
+        System.out.print("Edges count: ");
         int e = sc.nextInt();
-        while (e-- > 0) {
-            int a = id(v, sc.next().charAt(0));
-            int b = id(v, sc.next().charAt(0));
-            g[a][b] = g[b][a] = 1;
+
+        for (int i = 0; i < e; i++) {
+            char u = sc.next().charAt(0);
+            char v = sc.next().charAt(0);
+            int ui = indexOf(vertices, u);
+            int vi = indexOf(vertices, v);
+            graph[ui][vi] = graph[vi][ui] = 1;
         }
 
-        char s = sc.next().charAt(0);
-        bfs(g, v, s);
-        dfs(g, v, s);
-        sc.close();
+        System.out.print("Start vertex: ");
+        char start = sc.next().charAt(0);
+
+        bfs(graph, vertices, start);
+        dfs(graph, vertices, start);
     }
 }
