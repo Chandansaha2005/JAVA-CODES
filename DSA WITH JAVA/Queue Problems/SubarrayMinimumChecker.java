@@ -1,12 +1,18 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 
 public class SubarrayMinimumChecker {
 
     public static int countValidSubarrays(int[] arr) {
-        int n = arr.length;
-        Queue<Integer> q1 = new LinkedList<>();
-        return 0;
+        Stack<Integer> st = new Stack<Integer>();
+        int ans = 0, n = arr.length;
+        for (int i = n - 1; i >= 0; i--) {
+            while (st.empty() == false && arr[st.peek()] >= arr[i])
+                st.pop();
+            int last = ((st.empty() == true) ? n : st.peek());
+            ans += (last - i);
+            st.push(i);
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
